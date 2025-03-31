@@ -43,7 +43,6 @@ dotenv.config(); // Load environment variables
 
 const connectionString = process.env.MONGODB_URI;
 
-const mongoose = require('mongoose');
 const mongoURI = process.env.MONGODB_URI; // This will pull the value from Render's environment variables
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
