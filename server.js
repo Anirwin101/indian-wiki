@@ -43,6 +43,18 @@ dotenv.config(); // Load environment variables
 
 const connectionString = process.env.MONGODB_URI;
 
+const mongoose = require('mongoose');
+const mongoURI = process.env.MONGODB_URI; // This will pull the value from Render's environment variables
+
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connected to MongoDB Atlas!');
+  })
+  .catch(err => {
+    console.error('MongoDB connection error:', err);
+  });
+
+
 // Ensure connection only happens once
 if (mongoose.connection.readyState === 0) { // 0 means disconnected
   mongoose.connect(connectionString, {
