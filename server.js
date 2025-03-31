@@ -31,41 +31,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // 🔹 2️⃣ Connect to MongoDB
-mongoose.connect("mongodb+srv://reachanirwin:reachanirwin@indianwikicluster.4lfjbfc.mongodb.net/?retryWrites=true&w=majority&appName=IndianWikiCluster", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-.then(() => console.log("✅ Connected to MongoDB"))
-.catch(err => console.error("❌ MongoDB Connection Error:", err));
-
 dotenv.config(); // Load environment variables
-
-
-const connectionString = process.env.MONGODB_URI;
-
 const mongoURI = process.env.MONGODB_URI; // This will pull the value from Render's environment variables
 
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongoURI)
   .then(() => {
     console.log('Connected to MongoDB Atlas!');
   })
   .catch(err => {
     console.error('MongoDB connection error:', err);
   });
-
-
-// Ensure connection only happens once
-if (mongoose.connection.readyState === 0) { // 0 means disconnected
-  mongoose.connect(connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }).then(() => {
-    console.log('Connected to MongoDB');
-  }).catch((error) => {
-    console.error('MongoDB connection error:', error);
-  });
-}
-
 
 // 🔹 3️⃣ Middleware for Authentication
 function isAuthenticated(req, res, next) {
@@ -145,7 +120,6 @@ app.get("/oops", isAuthenticated, (req, res) => res.sendFile(path.join(__dirname
 app.get('/states', (req, res) => {
     res.sendFile(__dirname + '/public/states.html'); 
 });
-
 
 app.get("/cities", isAuthenticated, (req, res) => res.sendFile(path.join(__dirname, "public", "cities.html")));
 
@@ -269,35 +243,18 @@ app.get("/states/telangana", isAuthenticated, (req, res) => {
     console.log("✅ Accessing /states/telangana");
     res.sendFile(path.join(__dirname, "public", "telangana.html"));
 });
-app.get("/states/tripura", isAuthenticated, (req, res) => {
-    console.log("✅ Accessing /states/tripura");
-    res.sendFile(path.join(__dirname, "public", "tripura.html"));
+app.get("/states/uttarakhand", isAuthenticated, (req, res) => {
+    console.log("✅ Accessing /states/uttarakhand");
+    res.sendFile(path.join(__dirname, "public", "uttarakhand.html"));
 });
 app.get("/states/uttarpradesh", isAuthenticated, (req, res) => {
     console.log("✅ Accessing /states/uttarpradesh");
     res.sendFile(path.join(__dirname, "public", "uttarpradesh.html"));
-});
-app.get("/states/uttarakhand", isAuthenticated, (req, res) => {
-    console.log("✅ Accessing /states/uttarakhand");
-    res.sendFile(path.join(__dirname, "public", "uttarakhand.html"));
 });
 app.get("/states/westbengal", isAuthenticated, (req, res) => {
     console.log("✅ Accessing /states/westbengal");
     res.sendFile(path.join(__dirname, "public", "westbengal.html"));
 });
 
-app.get('/states/:stateName', (req, res) => {
-    const stateName = req.params.stateName;
-    res.sendFile(__dirname + `/public/states/${stateName}.html`);
-});
-
-// 🔹 6️⃣ Check if User is Logged In (For Frontend)
-app.get("/check-auth", (req, res) => {
-    res.json({ isAuthenticated: !!req.session.userId });
-});
-
-// 🔹 7️⃣ Handle Unknown Routes
-app.use((req, res) => res.redirect("/oops"));
-
-// 🔹 8️⃣ Start the Server
-app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+// 🔹 6️⃣ Start the server
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
