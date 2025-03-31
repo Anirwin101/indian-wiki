@@ -40,12 +40,21 @@ mongoose.connect("mongodb+srv://reachanirwin:reachanirwin@indianwikicluster.4lfj
 
 dotenv.config(); // Load environment variables
 
-mongoose.connect(process.env.MONGO_URI, {
+
+const connectionString = process.env.MONGODB_URI;
+
+// Ensure connection only happens once
+if (mongoose.connection.readyState === 0) { // 0 means disconnected
+  mongoose.connect(connectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-})
-.then(() => console.log('✅ MongoDB Connected'))
-.catch(err => console.error('❌ MongoDB Connection Error:', err));
+  }).then(() => {
+    console.log('Connected to MongoDB');
+  }).catch((error) => {
+    console.error('MongoDB connection error:', error);
+  });
+}
+
 
 // 🔹 3️⃣ Middleware for Authentication
 function isAuthenticated(req, res, next) {
