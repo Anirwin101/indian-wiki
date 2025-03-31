@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucknow - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .city {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .city img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+    .city:hover {
+        transform: scale(1.1);
+    }
+    .city-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .button:active {
+        transform: scale(0.98);
+    }
+    footer {
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lucknow</h1>
+            <hr>
+            <h2>The City of Nawabs</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/Lucknow-1.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Lucknow-2.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Lucknow-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Lucknow, often referred to as the "City of Nawabs," is a historic city located in the state of <a href="/states/uttar-pradesh">Uttar Pradesh</a>. Known for its rich cultural heritage, Lucknow has been a significant center of art, music, and literature. The city is famous for its grand architecture, including the Bara Imambara, Chota Imambara, and Rumi Darwaza. Lucknow’s vibrant markets, traditional Chikankari embroidery, and mouth-watering Awadhi cuisine make it a city that beautifully blends the past and present.</p>
+        
+        <hr>
+        <h1>Location of Lucknow 📌</h1>
+        <div class="city-container">
+            <div class="city">
+                <a href="https://www.google.com/maps/place/Lucknow,+Uttar+Pradesh/data=!4m2!3m1!1s0x399bfd991f32b16b:0x93ccba8909978be7?sa=X&ved=1t:242&ictx=111" target="_blank"><img src="/images/lucknow-1.webp"></a>
+            </div>
+        </div>
+        <p>Click to Explore on Google Maps</p>
+
+        <hr>
+        <h1>History of Kochi</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/lucknow-4.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/lucknow-5.jpg">
+            </div>
+        </div>
+        <p>Lucknow has a fascinating history rooted in the Mughal and Nawabi era. It became a prominent city under the rule of the Nawabs of Awadh, who were great patrons of art and culture. The city played a significant role in the Revolt of 1857 against British rule. Today, Lucknow preserves its regal charm while evolving into a modern metropolis.</p>
+        <hr>
+        <h1>Geography and Modern Development</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/lucknow-6.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/lucknow-7.jpg">
+            </div>
+        </div>
+        <p>Lucknow is strategically located in northern India and serves as the capital of Uttar Pradesh. The city has witnessed rapid urbanization, with metro connectivity, IT parks, and world-class infrastructure developments. Lucknow’s economy is thriving, with major industries in education, technology, and handicrafts contributing to its growth.</p>
+        <hr>
+        <h1>Cultural and Culinary Heritage</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/lucknow-8.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/lucknow-9.jpg">
+            </div>
+        </div>
+        <p>Lucknow’s culture is deeply rooted in poetry, music, and cuisine. The city is famous for its classical dance forms, Urdu poetry, and the hospitality of its people. Its food, particularly kebabs, biryanis, and sweets like kulfi, attracts food lovers from all over India. The blend of tradition and modernity makes Lucknow a city like no other.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/cities';">Back to Cities</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

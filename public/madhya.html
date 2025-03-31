@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhya Pradesh - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .state {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .state img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .state:hover {
+        transform: scale(1.1);
+    }
+    .state-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Adds space between images */
+        flex-wrap: wrap; /* Ensures responsiveness */
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff; /* Blue color */
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: scale(1.05); /* Slightly increases size */
+    }
+
+    .button:active {
+        transform: scale(0.98); /* Press effect */
+    }
+    footer{
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Madhya Pradesh</h1>
+            <hr>
+            <h2>The Heart of India</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/madhya-1.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/madhya-2.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/madhya-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Madhya Pradesh, located in central India, is known for its rich history, cultural heritage, and natural beauty. The state is bordered by Uttar Pradesh, Chhattisgarh, Maharashtra, Gujarat, and Rajasthan.
+
+            Famous for its ancient temples, wildlife sanctuaries, and historical landmarks, Madhya Pradesh is home to iconic sites like Khajuraho, Sanchi Stupa, and Kanha National Park.</p>
+        
+        <hr>
+        <h1>History of Madhya Pradesh</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/madhya-4.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/madhya-5.jpg">
+            </div>
+        </div>
+        <p>Madhya Pradesh has a rich history that dates back to ancient times. It was ruled by powerful dynasties like the Mauryas, Guptas, and the Mughals, which left behind remarkable architectural and cultural legacies.
+
+            In modern history, Madhya Pradesh was formed in 1956, reorganizing the central regions of India under the States Reorganization Act.</p>
+        <hr>
+        <h1>Geography and Natural Beauty</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/madhya-6.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/madhya-7.jpg">
+            </div>
+        </div>
+        <p>Madhya Pradesh is characterized by its dense forests, plateaus, and rivers. The state is home to Bandhavgarh National Park, Pachmarhi hill station, and the Narmada River.
+
+            Its natural beauty and biodiversity make it a popular destination for nature enthusiasts and wildlife lovers.</p>
+        <hr>
+        <h1>Cultural and Linguistic Identity</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/madhya-8.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/madhya-9.jpg">
+            </div>
+        </div>
+        <p>Madhya Pradesh is known for its vibrant culture, which is reflected in its festivals like Navratri, traditional dances like Ghoomar, and exquisite handicrafts. The state is also famous for its cuisine, including dishes like Poha, Bhutte Ka Kees, and Jalebi.
+
+            The primary language spoken in Madhya Pradesh is Hindi, along with other regional languages and dialects.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/states';">Back to States</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

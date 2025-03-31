@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipur - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .state {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .state img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .state:hover {
+        transform: scale(1.1);
+    }
+    .state-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Adds space between images */
+        flex-wrap: wrap; /* Ensures responsiveness */
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff; /* Blue color */
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: scale(1.05); /* Slightly increases size */
+    }
+
+    .button:active {
+        transform: scale(0.98); /* Press effect */
+    }
+    footer{
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Manipur</h1>
+            <hr>
+            <h2>The Jewel of India</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/manipur-1.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/manipur-2.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/manipur-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Manipur, located in northeastern India, is known for its scenic landscapes, rich culture, and vibrant traditions. The state shares its borders with Nagaland, Mizoram, Assam, and Myanmar.
+
+            Famous for its classical dance form Manipuri, serene Loktak Lake, and the Keibul Lamjao National Park, Manipur is a land of natural beauty and cultural heritage.</p>
+        
+        <hr>
+        <h1>History of Manipur</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/manipur-4.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/manipur-5.jpg">
+            </div>
+        </div>
+        <p>Manipur has a rich history that dates back to ancient times. It was an independent kingdom before becoming a part of India in 1949. The state has a unique cultural identity shaped by its tribal communities and historical events.
+
+            Manipur played a significant role during World War II, with the Battle of Imphal being a notable event in the region's history.</p>
+        <hr>
+        <h1>Geography and Natural Beauty</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/manipur-6.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/manipur-7.jpg">
+            </div>
+        </div>
+        <p>Manipur is characterized by its lush green hills, valleys, and rivers. The state is home to Loktak Lake, the largest freshwater lake in northeastern India, and the unique floating islands called phumdis.
+
+            Its natural beauty and biodiversity make it a paradise for nature lovers and eco-tourists.</p>
+        <hr>
+        <h1>Cultural and Linguistic Identity</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/manipur-8.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/manipur-9.jpg">
+            </div>
+        </div>
+        <p>Manipur is known for its vibrant culture, which is reflected in its festivals like Yaoshang, traditional dances like Manipuri, and exquisite handlooms and handicrafts. The state is also famous for its cuisine, including dishes like Eromba and Chamthong.
+
+            The primary language spoken in Manipur is Meitei (Manipuri), along with other tribal languages and dialects.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/states';">Back to States</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

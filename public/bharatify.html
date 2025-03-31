@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bharatify</title>
+
+    <link rel="icon" type="image/png" href="/images/logo1.png" />
+  </head>
+  <style>
+    html, body {
+      height: 100%;
+      overflow: hidden; /* Prevent extra scrollbar */
+    }
+    .container {
+      height: 90vh; /* Instead of 100vh, prevent overflow */
+      overflow-y: auto; /* Enable scrolling inside only if needed */
+    }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(
+        135deg,
+        rgb(255, 94, 0),
+        #ffffff,
+        rgb(2, 248, 2)
+      );
+      background-size: 300% 300%;
+      animation: gradientBG 8s ease infinite;
+      box-sizing: border-box;
+    }
+    .container {
+      align-self: center;
+      display: flex;
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center everything inside */
+      justify-content: center;
+      text-align: center;
+      background-color: #e2e1e1;
+      max-width: 800px;
+      margin: 0 auto; /* Center the container horizontally */
+      height: 100vh; /* Make the container take full viewport height */
+      border-radius: 20px;
+      border: 3px black solid;
+      overflow-y: auto; /* Enables scrolling inside if content is too large */
+      padding: 20px;
+    }
+    .container h1 {
+      color: #1900ff;
+      font-size: 30px;
+    }
+    .container h2 {
+      color: #ff6600;
+      font-size: 30px;
+      margin-top: -5px;
+    }
+    .music-container {
+      width: 100%; /* Adjust width to fit inside */
+      max-width: 600px; /* Prevent it from being too large */
+      margin-top: 20px; /* Add space below the heading */
+    }
+    .music-container p {
+      color: #e2e1e1;
+    }
+
+    .song {
+      background: #333;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 2px solid black;
+      box-shadow: #ffcc00 0px 0px 10px;
+      margin-top: 30px;
+      max-width: 500px;
+      margin-left: 35px;
+    }
+    .song-1 {
+      background: #333;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 2px solid black;
+      box-shadow: #ffcc00 0px 0px 10px;
+      margin-top: 200px;
+      max-width: 610px;
+      margin-left: 35px;
+    }
+
+    .seek-bar {
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .play-pause-btn {
+      background: #ffcc00;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    .home {
+      background-color: #ffcc00;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #000;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin-top: 20px;
+    }
+
+    .home:hover {
+      background-color: #e6b800;
+      transform: scale(1.05);
+    }
+
+    .home:active {
+      background-color: #cc9900;
+      transform: scale(0.95);
+    }
+
+    h3 {
+      font-size: 18px;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    h3 a {
+      color: #02da14;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    h3 a:hover {
+      color: #045c01;
+      text-decoration: underline;
+    }
+    .spotify-logo img {
+      border-radius: 50%;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 40px;
+      border: 2px solid black;
+    }
+
+    .spotify-logo img:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
+    }
+    .music-container,
+    .song,
+    .spotify-logo {
+      max-width: 90%; /* Ensures elements don't stretch outside */
+      word-wrap: break-word; /* Prevents text from overflowing */
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px; /* Width of scrollbar */
+    }
+
+    /* Scrollbar Thumb (the moving part) */
+    ::-webkit-scrollbar-thumb {
+      background-color: #277a94; /* Change this to any color */
+      border-radius: 5px;
+    }
+
+    /* Scrollbar Track (background) */
+    ::-webkit-scrollbar-track {
+      background-color: #f4f4f4; /* Background of scrollbar */
+    }
+
+    /* Scrollbar on Hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #0565f5;
+    }
+    /* Firefox */
+    * {
+      scrollbar-color: #0004ff #222; /* Thumb color & track color */
+      scrollbar-width: thin; /* Thin scrollbar */
+    }
+
+    /* Chrome, Edge, and Safari */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #008cff;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2f00ff;
+    }
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="music-container">
+        <br />
+        <br />
+        <br />
+        <div class="song-1" data-index="0">
+          <p class="song-info">
+            India Waale - KK, Neeti Mohan, Vishal Dadlani, Shankar Mahadevan
+          </p>
+          <audio class="audio-player">
+            <source src="/audio/song1.mp3" type="audio/mp3" />
+          </audio>
+          <input type="range" class="seek-bar" value="0" />
+          <button class="play-pause-btn">▶ Play</button>
+        </div>
+
+        <div class="song" data-index="1">
+          <p class="song-info">Maa Tujhe Salaam - A. R. Rahman</p>
+          <audio class="audio-player">
+            <source src="/audio/song2.mp3" type="audio/mp3" />
+          </audio>
+          <input type="range" class="seek-bar" value="0" />
+          <button class="play-pause-btn">▶ Play</button>
+        </div>
+
+        <div class="song" data-index="2">
+          <p class="song-info">Saare Jahan Se Accha - Palak Muchhal</p>
+          <audio class="audio-player">
+            <source src="/audio/song3.mp3" type="audio/mp3" />
+          </audio>
+          <input type="range" class="seek-bar" value="0" />
+          <button class="play-pause-btn">▶ Play</button>
+        </div>
+
+        <div class="song" data-index="3">
+          <p class="song-info">Teri Mitti - Jyotica Tangri</p>
+          <audio class="audio-player">
+            <source src="/audio/song4.mp3" type="audio/mp3" />
+          </audio>
+          <input type="range" class="seek-bar" value="0" />
+          <button class="play-pause-btn">▶ Play</button>
+        </div>
+      </div>
+      <a href="/"><button class="home">Home</button></a>
+      <h3>
+        Want your own Spotify Songs to be playing in the background?
+        <a href="https://open.spotify.com/" target="_blank">Click Here!</a>
+      </h3>
+      <div class="spotify-logo">
+        <a href="https://open.spotify.com/" target="_blank"
+          ><img
+            src="/images/spotify.png"
+            alt="Spotify Logo"
+            width="100px"
+            height="100px"
+        /></a>
+      </div>
+    </div>
+  </body>
+  <script>
+    const songs = document.querySelectorAll(".song");
+
+    songs.forEach((song) => {
+      const audio = song.querySelector(".audio-player");
+      const playPauseBtn = song.querySelector(".play-pause-btn");
+      const seekBar = song.querySelector(".seek-bar");
+
+      // Play/Pause button functionality
+      playPauseBtn.addEventListener("click", () => {
+        if (audio.paused) {
+          stopAllSongs(); // Stop other songs before playing
+          audio.play();
+          playPauseBtn.textContent = "⏸ Pause";
+        } else {
+          audio.pause();
+          playPauseBtn.textContent = "▶ Play";
+        }
+      });
+
+      // Update seek bar as song plays
+      audio.addEventListener("timeupdate", () => {
+        seekBar.value = (audio.currentTime / audio.duration) * 100;
+      });
+
+      // Seek bar control
+      seekBar.addEventListener("input", () => {
+        audio.currentTime = (seekBar.value / 100) * audio.duration;
+      });
+
+      // When song ends, reset button text
+      audio.addEventListener("ended", () => {
+        playPauseBtn.textContent = "▶ Play";
+      });
+    });
+
+    // Stop all other songs when a new one plays
+    function stopAllSongs() {
+      songs.forEach((song) => {
+        const audio = song.querySelector(".audio-player");
+        const playPauseBtn = song.querySelector(".play-pause-btn");
+
+        if (!audio.paused) {
+          audio.pause();
+          playPauseBtn.textContent = "▶ Play";
+        }
+      });
+    }
+  </script>
+  <script src="/script.js"></script>
+</html>

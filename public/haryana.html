@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haryana - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .p {
+        font-size: 15px;
+    }
+    .state {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .state img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .state:hover {
+        transform: scale(1.1);
+    }
+    .state-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Adds space between images */
+        flex-wrap: wrap; /* Ensures responsiveness */
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff; /* Blue color */
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: scale(1.05); /* Slightly increases size */
+    }
+
+    .button:active {
+        transform: scale(0.98); /* Press effect */
+    }
+    footer{
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Haryana</h1>
+            <hr>
+            <h2>The Land of Abundance</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/haryana-1.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/haryana-2.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/haryana-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Haryana, located in northern India, is known for its rich cultural heritage, agricultural prosperity, and historical significance. It is one of the leading states in terms of economic development and industrial growth.
+
+            Haryana is famous for its vibrant festivals, traditional music, and dance forms like Ghoomar and Phag. The state also plays a significant role in India's sports achievements.</p>
+        
+        <hr>
+        <h1>History of Haryana</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/haryana-4.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/haryana-5.jpg">
+            </div>
+        </div>
+        <p>Haryana has a rich history that dates back to the Vedic period. It is believed to be the land where the epic Mahabharata was written and where the famous battle of Kurukshetra took place.
+
+            The state has been a witness to several historical events and has contributed significantly to India's freedom struggle. Today, Haryana is known for its historical landmarks, such as the Brahma Sarovar and the Kurukshetra War Memorial.</p>
+        <hr>
+        <h1>Geography and Natural Beauty</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/haryana-6.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/haryana-7.jpg">
+            </div>
+        </div>
+        <p>Haryana is characterized by its fertile plains, lush green fields, and scenic landscapes. The state is a major contributor to India's agricultural output, often referred to as the "Breadbasket of India."
+
+            Haryana's natural beauty includes places like the Sultanpur Bird Sanctuary, Morni Hills, and Damdama Lake, which attract nature enthusiasts and tourists alike.</p>
+        <hr>
+        <h1>Cultural and Culinary Delights</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/haryana-8.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/haryana-9.jpg">
+            </div>
+        </div>
+        <p>Haryana is known for its vibrant culture, which is deeply rooted in its traditions and customs. The state celebrates festivals like:</p>
+        <ul>
+            <li>Lohri – A harvest festival celebrated with bonfires and traditional songs.</li>
+            <li>Holi – The festival of colors, marked by joy and togetherness.</li>
+            <li>Surajkund Mela – A cultural fair showcasing crafts, music, and dance.</li>
+        </ul>
+        <p>Haryanvi cuisine is simple yet flavorful, featuring dishes like bajra roti, kheer, and lassi. The use of fresh ingredients and traditional cooking methods defines the unique taste of Haryanvi food.</p>
+        <hr>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/states';">Back to States</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

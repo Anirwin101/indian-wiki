@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karnataka - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .state {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .state img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .state:hover {
+        transform: scale(1.1);
+    }
+    .state-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Adds space between images */
+        flex-wrap: wrap; /* Ensures responsiveness */
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff; /* Blue color */
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: scale(1.05); /* Slightly increases size */
+    }
+
+    .button:active {
+        transform: scale(0.98); /* Press effect */
+    }
+    footer{
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Karnataka</h1>
+            <hr>
+            <h2>The Land of Sandalwood and Silk</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/karnataka-1.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/karnataka-2.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/karnataka-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Karnataka, located in southern India, is known for its rich cultural heritage, historical landmarks, and diverse landscapes. The state is bordered by Maharashtra, Goa, Kerala, Tamil Nadu, Andhra Pradesh, and the Arabian Sea.
+
+            Famous for its classical music, dance forms, and cuisine, Karnataka is home to iconic sites like Hampi, Mysore Palace, and Coorg's coffee plantations.</p>
+        
+        <hr>
+        <h1>History of Karnataka</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/karnataka-4.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/karnataka-5.jpg">
+            </div>
+        </div>
+        <p>Karnataka has a rich history that dates back to ancient times. It was ruled by powerful dynasties like the Chalukyas, Hoysalas, and Vijayanagara Empire, which left behind remarkable architectural wonders.
+
+            In modern history, Karnataka was formed in 1956, unifying Kannada-speaking regions under the States Reorganization Act.</p>
+        <hr>
+        <h1>Geography and Natural Beauty</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/karnataka-6.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/karnataka-7.jpg">
+            </div>
+        </div>
+        <p>Karnataka is characterized by its Western Ghats, lush forests, and pristine beaches. The state is home to Jog Falls, Bandipur National Park, and the serene hill stations of Chikmagalur and Coorg.
+
+            Its natural beauty and biodiversity make it a popular destination for nature lovers and adventure seekers.</p>
+        <hr>
+        <h1>Cultural and Linguistic Identity</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/karnataka-8.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/karnataka-9.jpg">
+            </div>
+        </div>
+        <p>Karnataka is known for its vibrant culture, which is reflected in its festivals like Dasara, traditional dances like Yakshagana, and exquisite handicrafts. The state is also famous for its cuisine, including dishes like Bisi Bele Bath and Mysore Pak.
+
+            The primary language spoken in Karnataka is Kannada, along with other regional languages and dialects.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/states';">Back to States</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

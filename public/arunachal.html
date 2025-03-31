@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arunachal Pradesh - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .p{
+        font-size: 15px;
+    }
+    .state {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+    .state img {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+    }
+    .state:hover {
+            transform: scale(1.1);
+        }
+        .state-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between images */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+li {
+    padding: 10px;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+li:hover {
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+.button {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly increases size */
+}
+
+.button:active {
+    transform: scale(0.98); /* Press effect */
+}
+footer{
+        border-radius: 10px;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Arunachal Pradesh</h1>
+            <hr>
+            <h2>The Land of the Rising Sun</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="state-container">
+            <div class="state">
+                <image src="/images/arunachal-1.jpg">
+            </div>
+            <div class="state">
+                <image src="/images/arunachal-2.jpg">
+            </div>
+            <div class="state">
+                <image src="/images/arunachal-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Arunachal Pradesh, located in the northeastern part of India, is often referred to as the "Land of the Rising Sun" because it is the first Indian state to witness the sunrise. It shares international borders with China (Tibet) to the north, Myanmar to the east, and Bhutan to the west, making it a strategically important state for India. It also shares its boundaries with the Indian states of Assam and Nagaland.
+
+            This beautiful state is known for its stunning landscapes, diverse tribal cultures, dense forests, and serene monasteries. The region remains relatively unexplored, preserving its natural beauty and indigenous traditions.</p>
+        
+        <hr>
+        <h1>History of Arunachal Pradesh</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/arunachal-4.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/arunachal-5.jpg">
+            </div>
+        </div>
+        <p>Arunachal Pradesh has a long history dating back to ancient times. According to Hindu mythology, it is believed that Sage Parashurama washed away his sins in the Lohit River, and Sage Vyasa meditated in the hills of Arunachal. The region also finds mention in the Mahabharata and Ramayana, with King Bhishmaka of the Idu Mishmi tribe being associated with the legend of Krishna and Rukmini.
+
+            Historically, the area was under the rule of different local chieftains and tribes before the British took control in the 19th century. After India’s independence, Arunachal Pradesh was initially part of Assam but later became a Union Territory in 1972. It gained full statehood on February 20, 1987.</p>
+        <hr>
+        <h1>Geography and Natural Beauty</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/arunachal-6.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/arunachal-7.jpg">
+            </div>
+        </div>
+        <p>Arunachal Pradesh is covered with thick forests, snow-capped mountains, and deep river valleys. The Himalayan ranges run across the state, with Kangto Peak (7,090 m) being the highest mountain. The Siang, Subansiri, Kameng, and Lohit rivers flow through the region, providing lifelines to the local communities.
+
+            The climate varies from subtropical in the foothills to alpine in the mountains. Winters can be quite cold, especially in high-altitude areas, while summers remain mild. The state also experiences heavy rainfall during the monsoon season.</p>
+        <hr>
+        <h1>Cultural and Linguistic Identity</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/arunachal-8.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/arunachal-9.jpg">
+            </div>
+        </div>
+        <p>Arunachal Pradesh is home to 26 major tribes and over 100 sub-tribes, each with its unique traditions, languages, and customs. Some of the prominent tribes include:</p>
+        <ul>
+            <li>Nyishi – The largest tribe, known for their hunting skills and traditional attire.</li>
+            <li>Apatani – Famous for their unique farming techniques and nose plugs worn by elderly women.</li>
+            <li>Monpa – Followers of Tibetan Buddhism, residing near Tawang.</li>
+            <li>Mishmi – Known for their intricate textile weaving and close ties to Tibet.</li>
+            <li>Adi, Galo, and Tagin – Warrior tribes with strong community traditions.</li>
+        </ul>
+        <p>Each tribe has its own festivals, folk music, dance forms, and religious beliefs. The Losar Festival (Tibetan New Year), Dree Festival (Apatani), and Nyokum Festival (Nyishi) are among the most celebrated festivals in the state.</p>
+        <hr>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/states';">Back to States</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+    
+</body>
+<script src="/script.js"></script>
+</html>

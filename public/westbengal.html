@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West Bengal - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .state {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .state img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .state:hover {
+        transform: scale(1.1);
+    }
+    .state-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Adds space between images */
+        flex-wrap: wrap; /* Ensures responsiveness */
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff; /* Blue color */
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: scale(1.05); /* Slightly increases size */
+    }
+
+    .button:active {
+        transform: scale(0.98); /* Press effect */
+    }
+    footer{
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>West Bengal</h1>
+            <hr>
+            <h2>The Land of Culture and Heritage</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/westbengal-1.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/westbengal-2.png">
+            </div>
+            <div class="state">
+                <img src="/images/westbengal-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>West Bengal, located in eastern India, is known for its rich cultural heritage, historical significance, and vibrant traditions.
+
+            Famous for its literature, art, and cuisine, West Bengal offers a unique blend of history and modernity.</p>
+        
+        <hr>
+        <h1>History of West Bengal</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/westbengal-4.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/westbengal-5.jpg">
+            </div>
+        </div>
+        <p>West Bengal has a rich historical legacy, with its roots tracing back to ancient civilizations. The state has been a center of art, culture, and education.
+
+            It is home to several historical landmarks, including the Victoria Memorial and Howrah Bridge.</p>
+        <hr>
+        <h1>Geography and Natural Beauty</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/westbengal-6.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/westbengal-7.jpg">
+            </div>
+        </div>
+        <p>West Bengal is characterized by its diverse geography, ranging from the Himalayas in the north to the Sundarbans in the south. The state is rich in biodiversity and is home to several national parks.
+
+            Its natural beauty and cultural richness make it a popular destination for tourists.</p>
+        <hr>
+        <h1>Cultural and Linguistic Identity</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/westbengal-8.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/westbengal-9.jpg">
+            </div>
+        </div>
+        <p>West Bengal is known for its vibrant culture, traditional crafts, and world-famous cuisine. The state celebrates festivals like Durga Puja, Kali Puja, and Poila Boishakh with great enthusiasm.
+
+            The primary language spoken in West Bengal is Bengali (official).</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/states';">Back to States</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

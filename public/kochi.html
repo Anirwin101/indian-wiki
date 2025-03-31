@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kochi - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .city {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .city img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+    .city:hover {
+        transform: scale(1.1);
+    }
+    .city-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .button:active {
+        transform: scale(0.98);
+    }
+    footer {
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kochi</h1>
+            <hr>
+            <h2>The Queen of the Arabian Sea</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/Kochi-1.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Kochi-2.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Kochi-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Kochi, often referred to as the "Queen of the Arabian Sea," is a vibrant port city located in the state of <a href="/states/kerala">Kerala</a>. Known for its rich cultural heritage, Kochi has been a melting pot of various cultures, including Portuguese, Dutch, British, and Arab influences. The city is a major hub for trade, tourism, and modern development. Kochi is home to the iconic Chinese fishing nets, the historic Fort Kochi, and the bustling spice markets that have been operational for centuries. The city’s cosmopolitan vibe is complemented by its traditional Kathakali performances, Ayurvedic centers, and backwater cruises. Kochi is also a gateway to Kerala’s famous hill stations, beaches, and wildlife sanctuaries, making it a favorite destination for travelers from around the world.</p>
+        
+        <hr>
+        <h1>Location of Kochi 📌</h1>
+        <div class="city-container">
+            <div class="city">
+                <a href="https://www.google.com/maps/place/Kochi/@9.9312,76.2673,11z/data=!3m1!4b1!4m6!3m5!1s0x3b080d6c6c6c6c6c:0x6c6c6c6c6c6c6c6c!8m2!3d9.9312!4d76.2673!16zL20vMDljNnc?entry=ttu&g_ep=EgoyMDI1MDMyNS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank"><img src="/images/kochi-1.webp"></a>
+            </div>
+        </div>
+        <p>Click to Explore on Google Maps</p>
+
+        <hr>
+        <h1>History of Kochi</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/Kochi-4.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Kochi-5.jpg">
+            </div>
+        </div>
+        <p>Kochi has a fascinating history that dates back to ancient times when it was a major center for the spice trade. The city gained prominence in the 14th century when it became a key port for Arab, Chinese, and European traders. The Portuguese arrived in Kochi in 1503, making it the first European colony in India. They built the famous St. Francis Church, which still stands as a testament to their influence. Later, the Dutch and the British took control of the city, leaving behind architectural and cultural imprints. Fort Kochi, with its colonial-era buildings, is a living museum of this rich history. Post-independence, Kochi emerged as a modern city while preserving its historical charm. Today, it is a thriving metropolis known for its maritime trade, IT parks, and cultural festivals like the Kochi-Muziris Biennale, which attracts artists and art lovers from across the globe.</p>
+        <hr>
+        <h1>Geography and Modern Development</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/Kochi-6.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Kochi-7.jpg">
+            </div>
+        </div>
+        <p>Kochi is strategically located on the southwest coast of India, with a natural harbor that has made it a key player in maritime trade for centuries. The city is surrounded by the Arabian Sea and a network of backwaters, offering stunning landscapes and unique ecosystems. In recent years, Kochi has witnessed rapid urbanization and infrastructure development. The Kochi Metro has revolutionized public transport, while the Smart City project has attracted global IT companies. The Cochin International Airport is the world’s first fully solar-powered airport, showcasing the city’s commitment to sustainability. Kochi’s real estate market is booming, with luxury apartments and commercial spaces catering to its growing population. The city is also a hub for healthcare and education, with world-class hospitals and institutions like the Cochin University of Science and Technology (CUSAT).</p>
+        <hr>
+        <h1>Cultural and Culinary Heritage</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/Kochi-8.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Kochi-9.jpg">
+            </div>
+        </div>
+        <p>Kochi’s culture is a harmonious blend of tradition and modernity. The city is known for its vibrant festivals, including Onam, Vishu, and the Cochin Carnival, which bring people together in celebration. Traditional art forms like Kathakali, Mohiniyattam, and Theyyam are performed in cultural centers across the city. Kochi’s culinary scene is equally diverse, offering everything from traditional Kerala dishes like appam and stew to international cuisines. The city’s seafood is a highlight, with fresh catches served in local restaurants and shacks. Kochi is also a coffee lover’s paradise, with numerous cafes offering a mix of traditional filter coffee and modern brews. The city’s nightlife is growing, with pubs and lounges catering to its young and cosmopolitan crowd. Despite its modern outlook, Kochi remains deeply rooted in its traditions, making it a city of contrasts and charm.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/cities';">Back to Cities</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

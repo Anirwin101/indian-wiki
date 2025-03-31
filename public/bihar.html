@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bihar - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .p {
+        font-size: 15px;
+    }
+    .state {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .state img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .state:hover {
+        transform: scale(1.1);
+    }
+    .state-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Adds space between images */
+        flex-wrap: wrap; /* Ensures responsiveness */
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff; /* Blue color */
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: scale(1.05); /* Slightly increases size */
+    }
+
+    .button:active {
+        transform: scale(0.98); /* Press effect */
+    }
+    footer{
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bihar</h1>
+            <hr>
+            <h2>The Land of Ancient Glory</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/bihar-1.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/bihar-2.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/bihar-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Bihar, located in eastern India, is a state with a rich historical and cultural heritage. It is bordered by Nepal to the north and the Indian states of Uttar Pradesh, Jharkhand, and West Bengal.
+
+            Known as the birthplace of Buddhism and Jainism, Bihar is home to ancient universities like Nalanda and Vikramshila. The state is also famous for its vibrant festivals and traditional cuisine.</p>
+        
+        <hr>
+        <h1>History of Bihar</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/bihar-4.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/bihar-5.jpg">
+            </div>
+        </div>
+        <p>Bihar has a glorious history that dates back to ancient times. It was the center of the Maurya and Gupta empires, which contributed significantly to Indian culture and governance. The region also played a pivotal role in the spread of Buddhism and Jainism.
+
+            During the medieval period, Bihar was an important center of learning and culture. In modern history, it was a key region in India's struggle for independence, with leaders like Mahatma Gandhi and Jayaprakash Narayan leading movements from this land.</p>
+        <hr>
+        <h1>Geography and Natural Beauty</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/bihar-6.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/bihar-7.jpg">
+            </div>
+        </div>
+        <p>Bihar is characterized by its fertile plains, crisscrossed by rivers like the Ganges, Gandak, and Kosi. The state is known for its agricultural productivity, particularly in rice, wheat, and sugarcane cultivation.
+
+            The Rajgir hills and the Bodh Gaya region are popular tourist destinations, attracting visitors from around the world. Bihar's natural beauty and historical significance make it a unique destination in India.</p>
+        <hr>
+        <h1>Cultural and Linguistic Identity</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/bihar-8.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/bihar-9.jpg">
+            </div>
+        </div>
+        <p>Bihar is home to a diverse population with a rich cultural heritage. Some of the prominent communities and traditions include:</p>
+        <ul>
+            <li>Maithils – Known for their traditional art forms like Madhubani painting.</li>
+            <li>Bhojpuris – Famous for their folk music and dance.</li>
+            <li>Magadhis – Representing the ancient Magadha region with its historical significance.</li>
+            <li>Angikas – Known for their unique dialect and cultural practices.</li>
+        </ul>
+        <p>Chhath Puja, a festival dedicated to the Sun God, is one of the most celebrated festivals in Bihar. Other festivals include Makar Sankranti, Holi, and Durga Puja.</p>
+        <hr>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/states';">Back to States</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

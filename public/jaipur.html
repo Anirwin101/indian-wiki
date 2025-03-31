@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaipur - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .city {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .city img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+    .city:hover {
+        transform: scale(1.1);
+    }
+    .city-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .button:active {
+        transform: scale(0.98);
+    }
+    footer {
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jaipur</h1>
+            <hr>
+            <h2>The Pink City of India</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/Jaipur-1.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Jaipur-2.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Jaipur-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Jaipur, the capital city of Rajasthan, is known as the Pink City due to its distinct pink-colored buildings. It is a city of royal heritage, magnificent forts, and vibrant bazaars, offering a glimpse into India's rich history and culture.</p>
+        
+        <hr>
+        <h1>Location of Jaipur 📌</h1>
+        <div class="city-container">
+            <div class="city">
+                <a href="https://www.google.com/maps/place/Jaipur/@26.9124336,75.7872709,11z/data=!3m1!4b1!4m6!3m5!1s0x396db5d0b8b8b8b:0x8b8b8b8b8b8b8b8b!8m2!3d26.9124336!4d75.7872709!16zL20vMDljNnc?entry=ttu&g_ep=EgoyMDI1MDMyNS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank"><img src="/images/jaipur-1.webp"></a>
+            </div>
+        </div>
+        <p>Click to Explore on Google Maps</p>
+
+        <hr>
+        <h1>History of Jaipur</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/jaipur-4.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/jaipur-5.jpg">
+            </div>
+        </div>
+        <p>Jaipur was founded in 1727 by Maharaja Sawai Jai Singh II. The city is home to iconic landmarks like the Hawa Mahal, Amber Fort, and City Palace, which reflect its royal past and architectural brilliance.</p>
+        <hr>
+        <h1>Geography and Modern Development</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/jaipur-6.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/jaipur-7.jpg">
+            </div>
+        </div>
+        <p>As Jaipur is the capital city of <a href="/states/rajasthan">Rajasthan</a>, it has witnessed rapid development in infrastructure, technology, tourism, and education. As part of the Smart Cities Mission, projects like smart traffic management, waste disposal systems, and digital public transport have been implemented. The Jaipur Metro Phase 2 expansion is planned to improve connectivity. Roads, flyovers, and underpasses have been upgraded to ease traffic congestion. IT and startup ecosystems are growing, with the emergence of tech hubs and co-working spaces. Tourism remains a major economic driver, with heritage conservation projects and improved facilities enhancing visitor experiences. The city is also becoming an education hub with institutions like MNIT, Jaipur National University, and Manipal University attracting students. Healthcare infrastructure has expanded with new hospitals and better medical facilities. E-commerce, retail, and real estate sectors are also growing, making Jaipur a well-rounded, developing urban center.</p>
+        <hr>
+        <h1>Cultural and Culinary Heritage</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/jaipur-8.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/jaipur-9.jpg">
+            </div>
+        </div>
+        <p>Jaipur is a cultural hub, famous for its traditional Rajasthani music, dance, and festivals like Teej and Gangaur. The city is also renowned for its cuisine, offering dishes like dal baati churma, ghevar, and laal maas.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/cities';">Back to Cities</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

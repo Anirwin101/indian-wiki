@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cities- The Indian Wiki</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .container{
+            max-width: 800;
+        }
+        .cities-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .city {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .city a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .city img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 2px 4px 10px black;
+        }
+
+        .city:hover {
+            transform: scale(1.1);
+        }
+        .button {
+        background-color: #007bff; /* Blue color */
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+        border: 2px black solid;
+      }
+      .download-btn {
+        background-color: #0bce5c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin-bottom: -5px;
+        margin-top: -18px;
+        border: 2px black solid;
+      }
+
+      .download-btn:hover {
+        background-color: #0a923e;
+      }
+      .pic {
+        max-width: 400px; /* Adjust this value as needed */
+        padding: 20px;
+        border: 2px solid black; /* Border thickness and color */
+        border-radius: 10px; /* Rounded corners */
+        text-align: center;
+        margin: auto; /* Centers it horizontally */
+        background-color: #91fc60; /* Light background */
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+      }
+</style>
+<body>
+    <a href="/"><img class="logo" src="/images/logo.webp"></a>
+    <button id="logout-btn" onclick="logout()" style="display: none;">Logout</button>
+    <div class="container">
+        <hr>
+        <h1>Explore the Major Indian Cities!</h1>
+        <hr>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <div class="cities-container">
+            <div class="city">
+                <a href="/cities/hyderabad">
+                    <img src="images/hyderabad.jpg" alt="Hyderabad">
+                    <p>Hyderabad</p>
+                </a>
+            </div>
+            <div class="city">
+                <a href="/cities/mumbai">
+                    <img src="images/mumbai.jpg" alt="Mumbai">
+                    <p>Mumbai</p>
+                </a>
+            </div>
+            <div class="city">
+                <a href="/cities/delhi">
+                    <img src="images/delhi.jpg" alt="Delhi">
+                    <p>Delhi</p>
+                </a>
+            </div>
+            <div class="city">
+                <a href="/cities/bangalore">
+                    <img src="images/bangalore.jpg" alt="Bangalore">
+                    <p>Bangalore</p>
+                </a>
+            </div>
+            <div class="city">
+                <a href="/cities/chennai">
+                    <img src="images/chennai.jpg" alt="Chennai">
+                    <p>Chennai</p>
+                </a>
+            </div>
+            <div class="city">
+                <a href="/cities/kolkata">
+                    <img src="images/kolkata.jpg" alt="Kolkata">
+                    <p>Kolkata</p>
+                </a>
+            </div>
+            <div class="city">
+                <a href="/cities/jaipur">
+                    <img src="images/jaipur.jpg" alt="Jaipur">
+                    <p>Jaipur</p>
+                </a>
+            </div>
+            <div class="city">
+                <a href="/cities/ahmedabad">
+                    <img src="images/ahmedabad.jpg" alt="Ahmedabad">
+                    <p>Ahmedabad</p>
+                </a>
+            </div>
+            <div class="city">
+                <a href="/cities/pune">
+                    <img src="images/pune.jpg" alt="Pune">
+                    <p>Pune</p>
+                </a>
+            </div>
+            <div class="city">
+                <a href="/cities/kochi">
+                    <img src="images/kochi.jpg" alt="Kochi">
+                    <p>Kochi</p>
+                </a>
+            </div>
+            <div class="city">
+                <a href="/cities/lucknow">
+                    <img src="images/lucknow.jpg" alt="Lucknow">
+                    <p>Lucknow</p>
+                </a>
+            </div>
+            <div class="city">
+                <a href="/cities/surat">
+                    <img src="images/surat.jpg" alt="Surat">
+                    <p>Surat</p>
+                </a>
+            </div>
+        </div>
+        <div class="pic">
+            <h3>Want a picture for your project, including all the Cities?</h3>
+            <br />
+            <a href="/images/cities.jpg" download><button class="download-btn">Download Image</button></a>
+        </div>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

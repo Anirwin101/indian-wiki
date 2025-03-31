@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delhi - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .city {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .city img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+    .city:hover {
+        transform: scale(1.1);
+    }
+    .city-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .button:active {
+        transform: scale(0.98);
+    }
+    footer {
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Delhi</h1>
+            <hr>
+            <h2>The Heart of India</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/Delhi-1.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Delhi-2.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Delhi-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Delhi, the capital city of <a href="/">India</a>, is a vibrant blend of history, culture, and modernity. It is home to iconic landmarks such as the Red Fort, India Gate, and Qutub Minar. As the political and administrative hub of the country, Delhi is a melting pot of diverse cultures, cuisines, and traditions. The city is divided into Old Delhi, known for its historical charm and bustling markets, and New Delhi, characterized by its wide avenues, government buildings, and modern infrastructure.</p>
+        
+        <hr>
+        <h1>Location of Delhi 📌</h1>
+        <div class="city-container">
+            <div class="city">
+                <a href="https://www.google.com/maps/place/Delhi/@28.704060,77.102493,11z/data=!3m1!4b1!4m6!3m5!1s0x390cfd1e8c8e6bfb:0x4c6f9b8e6bfb!8m2!3d28.704060!4d77.102493!16zL20vMDljNnc?entry=ttu&g_ep=EgoyMDI1MDMyNS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank"><img src="/images/delhi-1.png"></a>
+            </div>
+        </div>
+        <p>Click to Explore on Google Maps</p>
+
+        <hr>
+        <h1>History of Delhi</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/delhi-4.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/delhi-5.jpg">
+            </div>
+        </div>
+        <p>Delhi has a rich history that dates back to ancient times. It has been the capital of several empires, including the Delhi Sultanate and the Mughal Empire. The city has witnessed the rise and fall of many dynasties, leaving behind a legacy of architectural marvels and cultural heritage. From the majestic Humayun's Tomb to the bustling streets of Chandni Chowk, Delhi offers a glimpse into India's glorious past.</p>
+        <hr>
+        <h1>Geography and Modern Development</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/delhi-6.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/delhi-7.jpg">
+            </div>
+        </div>
+        <p>Located in northern India, Delhi is bordered by Haryana on three sides and Uttar Pradesh to the east. The city covers an area of approximately 1,484 square kilometers and is situated along the banks of the Yamuna River. Delhi is a major center for commerce, education, and tourism, with a rapidly growing infrastructure that includes metro rail, flyovers, and modern residential complexes.</p>
+        <hr>
+        <h1>Cultural and Culinary Heritage</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/delhi-8.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/delhi-9.jpg">
+            </div>
+        </div>
+        <p>Delhi is a cultural hub that celebrates festivals like Diwali, Holi, Eid, and Christmas with great enthusiasm. The city is also famous for its culinary delights, ranging from street food like chaat and parathas to Mughlai dishes like biryani and kebabs. The vibrant markets of Delhi, such as Connaught Place, Sarojini Nagar, and Dilli Haat, offer a unique shopping experience.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/cities';">Back to Cities</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

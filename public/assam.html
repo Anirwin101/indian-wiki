@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assam - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .p {
+        font-size: 15px;
+    }
+    .state {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .state img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .state:hover {
+        transform: scale(1.1);
+    }
+    .state-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Adds space between images */
+        flex-wrap: wrap; /* Ensures responsiveness */
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff; /* Blue color */
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: scale(1.05); /* Slightly increases size */
+    }
+
+    .button:active {
+        transform: scale(0.98); /* Press effect */
+    }
+    footer{
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Assam</h1>
+            <hr>
+            <h2>The Gateway to Northeast India</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/assam-1.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/assam-2.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/assam-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Assam, located in the northeastern part of India, is known for its rich culture, tea gardens, and biodiversity. It shares borders with Bhutan and Bangladesh, as well as the Indian states of Arunachal Pradesh, Nagaland, Manipur, Mizoram, Tripura, Meghalaya, and West Bengal.
+
+            Assam is famous for its one-horned rhinoceros, sprawling tea estates, and the mighty Brahmaputra River. The state is a melting pot of diverse cultures and traditions, making it a unique destination in India.</p>
+        
+        <hr>
+        <h1>History of Assam</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/assam-4.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/assam-5.jpg">
+            </div>
+        </div>
+        <p>Assam has a rich history that dates back to ancient times. It was ruled by the Ahom dynasty for over 600 years, which played a significant role in shaping the state's culture and traditions. The region also finds mention in ancient Indian texts like the Mahabharata.
+
+            During the colonial period, Assam became a major center for tea production under British rule. After India's independence, Assam became a state in 1947, and its boundaries were later reorganized to form new states in the northeast.</p>
+        <hr>
+        <h1>Geography and Natural Beauty</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/assam-6.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/assam-7.jpg">
+            </div>
+        </div>
+        <p>Assam is characterized by its lush green landscapes, rolling hills, and the Brahmaputra River. The Kaziranga National Park and Manas National Park, both UNESCO World Heritage Sites, are home to diverse wildlife, including the famous one-horned rhinoceros.
+
+            The state experiences a tropical monsoon climate, with heavy rainfall during the monsoon season. The fertile plains of Assam make it an agricultural hub, especially for rice and tea cultivation.</p>
+        <hr>
+        <h1>Cultural and Linguistic Identity</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/assam-8.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/assam-9.jpg">
+            </div>
+        </div>
+        <p>Assam is home to various ethnic groups and communities, each contributing to its vibrant culture. Some of the prominent communities include:</p>
+        <ul>
+            <li>Ahom – Known for their historical significance and contributions to Assamese culture.</li>
+            <li>Bodo – One of the largest ethnic groups, with a rich tradition of folk music and dance.</li>
+            <li>Mishing – Famous for their weaving skills and traditional festivals.</li>
+            <li>Karbi – Known for their unique customs and traditions.</li>
+            <li>Tea Tribes – Communities associated with the tea plantations of Assam.</li>
+        </ul>
+        <p>Bihu, the most celebrated festival in Assam, marks the Assamese New Year and is celebrated with traditional music, dance, and feasts. Other festivals include Durga Puja, Ali-Ai-Ligang, and Baishagu.</p>
+        <hr>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/states';">Back to States</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

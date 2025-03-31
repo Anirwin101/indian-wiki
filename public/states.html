@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>States - The Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" type="image/png" href="/images/logo1.png" />
+
+    <style>
+      .container {
+        max-width: 800px;
+      }
+      .states-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .state {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+      }
+      .state a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .state img {
+        width: 150px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 0 10px black;
+      }
+
+      .state:hover {
+        transform: scale(1.1);
+      }
+      .button {
+        background-color: #007bff; /* Blue color */
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+        border: 2px black solid;
+      }
+
+      .button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: scale(1.05); /* Slightly increases size */
+      }
+
+      .button:active {
+        transform: scale(0.98); /* Press effect */
+      }
+      .download-btn {
+        background-color: #0bce5c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin-bottom: -5px;
+        margin-top: -18px;
+        border: 2px black solid;
+      }
+
+      .download-btn:hover {
+        background-color: #0a923e;
+      }
+      .pic {
+        max-width: 400px; /* Adjust this value as needed */
+        padding: 20px;
+        border: 2px solid black; /* Border thickness and color */
+        border-radius: 10px; /* Rounded corners */
+        text-align: center;
+        margin: auto; /* Centers it horizontally */
+        background-color: #91fc60; /* Light background */
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/"><img class="logo" src="/images/logo.webp"/></a>
+    <button id="logout-btn" onclick="logout()" style="display: none">
+      Logout
+    </button>
+    <div class="container">
+      <hr />
+      <h1>Explore the Indian States!</h1>
+      <hr />
+      <div class="music-container">
+        <audio id="bg-music"></audio>
+
+        <span id="song-name">Loading...</span>
+        <button id="play-pause-btn">🔊 Play</button>
+        <button id="mute-btn">🔇 Mute</button>
+        <input
+          type="range"
+          id="volume-slider"
+          min="0"
+          max="1"
+          step="0.1"
+          value="0.5"
+        />
+      </div>
+      <div class="states-container">
+        <div class="state">
+          <a href="/states/andhra">
+            <img src="/images/andhra-pradesh.jpg" alt="Andhra Pradesh" />
+            <p>Andhra Pradesh</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/arunachal">
+            <img src="/images/arunachal-pradesh.jpg" alt="Arunachal Pradesh" />
+            <p>Arunachal Pradesh</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/assam">
+            <img src="/images/assam.jpg" alt="Assam" />
+            <p>Assam</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/bihar">
+            <img src="/images/bihar.jpg" alt="Bihar" />
+            <p>Bihar</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/chhattisgarh">
+            <img src="/images/chattisgarh.jpg" alt="Chattisgarh" />
+            <p>Chhattisgarh</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/goa">
+            <img src="/images/goa.jpg" alt="Goa" />
+            <p>Goa</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/gujarat">
+            <img src="/images/gujarat.jpg" alt="Gujarat" />
+            <p>Gujarat</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/haryana">
+            <img src="/images/haryana.jpg" alt="Haryana" />
+            <p>Haryana</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/himachal">
+            <img src="/images/himachal-pradesh.jpg" alt="Himachal Pradesh" />
+            <p>Himachal Pradesh</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/jharkhand">
+            <img src="/images/jharkhand.jpg" alt="Jharkhand" />
+            <p>Jharkhand</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/karnataka">
+            <img src="/images/karnataka.jpg" alt="Karnataka" />
+            <p>Karnataka</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/kerala">
+            <img src="/images/kerala.jpg" alt="Kerala" />
+            <p>Kerala</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/madhya">
+            <img src="/images/madhya-pradesh.jpg" alt="Madhya Pradesh" />
+            <p>Madhya Pradesh</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/maharashtra">
+            <img src="/images/maharashtra.jpg" alt="Maharashtra" />
+            <p>Maharashtra</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/manipur">
+            <img src="/images/manipur.jpg" alt="Manipur" />
+            <p>Manipur</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/meghalaya">
+            <img src="/images/meghalaya.jpg" alt="Meghalaya" />
+            <p>Meghalaya</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/mizoram">
+            <img src="/images/mizoram.jpg" alt="Mizoram" />
+            <p>Mizoram</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/nagaland">
+            <img src="/images/nagaland.jpg" alt="Nagaland" />
+            <p>Nagaland</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/odisha">
+            <img src="/images/odisha.jpg" alt="Odisha" />
+            <p>Odisha</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/punjab">
+            <img src="/images/punjab.jpg" alt="Punjab" />
+            <p>Punjab</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/rajasthan">
+            <img src="/images/rajasthan.jpg" alt="Rajasthan" />
+            <p>Rajasthan</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/sikkim">
+            <img src="/images/sikkim.jpg" alt="Sikkim" />
+            <p>Sikkim</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/tamilnadu">
+            <img src="/images/tamil-nadu.jpg" alt="Tamil Nadu" />
+            <p>Tamil Nadu</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/telangana">
+            <img src="/images/telangana.jpg" alt="Telangana" />
+            <p>Telangana</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/tripura">
+            <img src="/images/tripura.jpg" alt="Tripura" />
+            <p>Tripura</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/uttarpradesh">
+            <img src="/images/uttar-pradesh.jpg" alt="Uttar Pradesh" />
+            <p>Uttar Pradesh</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/uttarakhand">
+            <img src="/images/uttarakhand.jpg" alt="Uttarakhand" />
+            <p>Uttarakhand</p>
+          </a>
+        </div>
+        <div class="state">
+          <a href="/states/westbengal">
+            <img src="/images/west-bengal.jpg" alt="West Bengal" />
+            <p>West Bengal</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="pic">
+        <h3>Want a picture for your project, including all the States?</h3>
+        <br>
+        <a href="/images/statespic.png" download
+          ><button class="download-btn">Download Image</button></a
+        >
+      </div>
+      <br>
+      <button class="button" onclick="window.location.href = '/';">Home</button>
+    </div>
+
+    <script src="/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("bg-music");
+
+    // Restore music position & play if it was playing before
+    if (localStorage.getItem("musicTime")) {
+        audio.currentTime = localStorage.getItem("musicTime");
+    }
+    if (localStorage.getItem("isPlaying") === "true") {
+        audio.play();
+    }
+
+    // Save progress every second
+    setInterval(() => {
+        localStorage.setItem("musicTime", audio.currentTime);
+        localStorage.setItem("isPlaying", !audio.paused);
+    }, 1000);
+});
+
+    </script>
+  </body>
+</html>

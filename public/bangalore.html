@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangalore - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .city {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .city img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+    .city:hover {
+        transform: scale(1.1);
+    }
+    .city-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .button:active {
+        transform: scale(0.98);
+    }
+    footer {
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bangalore</h1>
+            <hr>
+            <h2>The Silicon Valley of India</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/Bangalore-1.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Bangalore-2.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Bangalore-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Bangalore, officially known as Bengaluru, is the capital city of <a href="/states/karnataka">Karnataka</a>. It is renowned as the IT hub of India and is home to numerous tech companies and startups. The city is also known for its pleasant climate, lush green parks, and vibrant nightlife. Bangalore offers a perfect blend of modernity and tradition, making it one of the most dynamic cities in India.</p>
+        
+        <hr>
+        <h1>Location of Bangalore 📌</h1>
+        <div class="city-container">
+            <div class="city">
+                <a href="https://www.google.com/maps/place/Bangalore/@12.971598,77.594566,11z/data=!3m1!4b1!4m6!3m5!1s0x3bae1670c8e6bfb:0x4c6f9b8e6bfb!8m2!3d12.971598!4d77.594566!16zL20vMDljNnc?entry=ttu&g_ep=EgoyMDI1MDMyNS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank"><img src="/images/bangalore-1.png"></a>
+            </div>
+        </div>
+        <p>Click to Explore on Google Maps</p>
+
+        <hr>
+        <h1>History of Bangalore</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/bangalore-4.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/bangalore-5.jpg">
+            </div>
+        </div>
+        <p>Bangalore has a rich history that dates back to the 16th century when it was founded by Kempe Gowda. Over the years, it has evolved into a major center for trade, education, and technology. The city is also known for its historical landmarks such as Tipu Sultan's Summer Palace and Bangalore Palace.</p>
+        <hr>
+        <h1>Geography and Modern Development</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/bangalore-6.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/bangalore-7.jpg">
+            </div>
+        </div>
+        <p>Located in southern India, Bangalore is situated on the Deccan Plateau at an elevation of over 900 meters above sea level. The city is known for its well-planned infrastructure, including the Namma Metro, flyovers, and tech parks. Bangalore is also a major center for education and research, with institutions like IISc and IIM Bangalore.</p>
+        <hr>
+        <h1>Cultural and Culinary Heritage</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/bangalore-8.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/bangalore-9.jpg">
+            </div>
+        </div>
+        <p>Bangalore is a cultural melting pot that celebrates festivals like Ugadi, Dussehra, and Christmas with great fervor. The city is also famous for its diverse culinary scene, offering everything from traditional South Indian dishes like dosa and idli to international cuisines. Popular food streets like VV Puram and Indiranagar are a must-visit for food lovers.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/cities';">Back to Cities</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

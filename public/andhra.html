@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andhra Pradesh - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .p{
+        font-size: 15px;
+    }
+    .state {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+    .state img {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+    }
+    .state:hover {
+            transform: scale(1.1);
+        }
+        .state-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between images */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+.button {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly increases size */
+}
+
+.button:active {
+    transform: scale(0.98); /* Press effect */
+}
+footer{
+        border-radius: 10px;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Andhra Pradesh</h1>
+            <hr>
+            <h2>The Land of Rich Heritage and Vibrant Culture</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="state-container">
+            <div class="state">
+                <image src="/images/andhra-pradesh.jpg" alt="Andhra Pradesh">
+            </div>
+            <div class="state">
+                <image src="/images/andhra-2.jpg" alt="Andhra Pradesh">
+            </div>
+            <div class="state">
+                <image src="/images/andhra-3.jpg" alt="Andhra Pradesh">
+            </div>
+        </div>
+        <hr>
+        <p>Andhra Pradesh, located in the southeastern part of India, is a state known for its rich history, diverse culture, breathtaking landscapes, and economic significance. It is the seventh-largest state in India by area and has the second-longest coastline (972 km) after Gujarat. The state is often called the "Rice Bowl of India" because of its fertile lands that contribute significantly to the country's rice production.</p>
+        <h1>History of Andhra Pradesh</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/andhra-4.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/andhra-5.jpg">
+            </div>
+        </div>
+        <p>Andhra Pradesh has a glorious past that dates back to ancient times. It was once a major center for trade and culture under various dynasties like the Satavahanas, Ikshvakus, Pallavas, Cholas, Kakatiyas, and Vijayanagara Empire. The Mauryan emperor Ashoka was one of the first rulers to spread Buddhism in this region, and the state is home to many ancient Buddhist sites like Amaravati and Nagarjunakonda. The Vijayanagara Empire left a significant mark on the state's history, with Lepakshi Temple being a prime example of its architectural brilliance.</p>
+        <hr>
+        <h1>Geography and Natural Beauty</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/andhra-6.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/andhra-7.jpg">
+            </div>
+        </div>
+        <p>Andhra Pradesh is a land of diverse landscapes, ranging from the Eastern Ghats to the vast plains and the beautiful Coromandel Coast. The Godavari and Krishna rivers, two of India's largest rivers, flow through the state, making it one of the most fertile regions in the country. The state has stunning beaches, forests, and hill stations, including the famous Araku Valley, Borra Caves, Lambasingi, and Horsley Hills.</p>
+        <hr>
+        <h1>Cultural and Linguistic Identity</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/andhra-8.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/andhra-9.jpg">
+            </div>
+        </div>
+        <p>The primary language spoken in Andhra Pradesh is Telugu, often called the "Italian of the East" due to its sweet and rhythmic tone. The state's culture is deeply rooted in classical dance, music, literature, and folklore. The Kuchipudi dance form, one of the eight major classical dance styles of India, originated here. Andhra Pradesh is also famous for its rich Carnatic music heritage and traditional art forms like Tholu Bommalata (shadow puppetry).</p>
+        <hr>
+        <h1>Economy and Industrial Growth</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/andhra-10.png">
+            </div>
+            <div class="state">
+                <img src="/images/andhra-11.png">
+            </div>
+        </div>
+        <p>The economy of Andhra Pradesh is driven by agriculture, industry, and services. As the Rice Bowl of India, the state is one of the largest producers of rice, maize, tobacco, cotton, and chillies. It has a thriving fishing and aquaculture industry, with shrimp and fish exports contributing significantly to the economy. The Visakhapatnam port, one of India's largest ports, plays a crucial role in trade and commerce.</p>
+        
+        <p>The state is also emerging as an industrial and IT hub, with cities like Visakhapatnam, Vijayawada, and Tirupati growing rapidly. 
+            The government is heavily investing in infrastructure projects, including the development of Amaravati, the new capital city.</p>
+        
+            <button class="button" onclick="window.location.href = '/';">Home</button>
+            <button class="button" onclick="window.location.href = '/states';">Back to States</button>
+            <br>
+            <br>
+            <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

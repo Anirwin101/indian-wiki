@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .city {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .city img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+    .city:hover {
+        transform: scale(1.1);
+    }
+    .city-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .button:active {
+        transform: scale(0.98);
+    }
+    footer {
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Surat</h1>
+            <hr>
+            <h2>The Diamond City of India</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/surat-1.png">
+            </div>
+            <div class="city">
+                <img src="/images/surat-2.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/surat-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Surat, often referred to as the "Diamond City of India," is a major economic and commercial hub in the state of <a href="/states/gujarat">Gujarat</a>. Famous for its thriving textile and diamond industries, Surat is a city that seamlessly blends historical significance with modern growth. Known for its cleanliness, vibrant culture, and warm hospitality, Surat stands as one of India's fastest-growing cities.</p>
+        
+        <hr>
+        <h1>Location of Surat 📌</h1>
+        <div class="city-container">
+            <div class="city">
+                <a href="https://www.google.com/maps/place/Surat,+Gujarat" target="_blank"><img src="/images/surat-4.webp"></a>
+            </div>
+        </div>
+        <p>Click to Explore on Google Maps</p>
+        
+        <hr>
+        <h1>History of Surat</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/surat-5.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/surat-6.jpg">
+            </div>
+        </div>
+        <p>Surat has a rich history dating back to the Mughal era. It was once a major port city during the 16th and 17th centuries, attracting traders from Europe and the Middle East. The city flourished under Mughal rule and later became a key center for the British East India Company. Today, Surat continues to thrive as a commercial powerhouse.</p>
+        
+        <hr>
+        <h1>Geography and Modern Development</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/surat-7.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/surat-8.jpg">
+            </div>
+        </div>
+        <p>Located on the banks of the Tapi River, Surat enjoys a coastal advantage that has historically contributed to its prosperity. The city has witnessed rapid industrialization, with IT hubs, smart city initiatives, and sustainable urban planning making it a model for modern development.</p>
+        
+        <hr>
+        <h1>Cultural and Culinary Heritage</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/surat-9.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/surat-10.jpg">
+            </div>
+        </div>
+        <p>Surat is famous for its unique blend of Gujarati culture and global influences. The city is renowned for its street food, including Locho, Surati Undhiyu, and Ghari sweets. Festivals like Navratri and Diwali are celebrated with grandeur, making Surat a lively and colorful city.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/cities';">Back to Cities</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

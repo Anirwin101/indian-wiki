@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Indian Wiki</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+
+    <style>
+        table {
+            margin: 0 auto; /* Centers the table */
+            border-collapse: collapse;
+            width: 80%;
+            text-align: center;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+        * {
+            scrollbar-width: 30px; 
+            scrollbar-color: #0066ff #f4f4f4; /* Thumb color | Track color */
+        }
+        .googlemap img{
+            border-radius: 40px;
+        }
+
+        .flag img{
+            border-radius: 15px;
+            border: #030303 3px solid;
+            box-shadow: 5px 5px 5px black;
+            transition: transform 0.3s ease;
+        }
+        .flag img:hover {
+            transform: scale(1.05);
+            box-shadow: 4px 7px 5px black;
+        }
+
+        .emblem img{
+            width: 50%;
+            height: 50%;
+            border-radius: 20px;
+            border: 2px black solid;
+        }
+        .website img{
+            width: 60%;
+            height: 60%;
+            border-radius: 20px;
+            border: 2px black solid;
+            transition: transform 0.3s ease;
+        }
+        .website img:hover{
+            transform: scale(1.05);
+        }
+
+        .language img{
+            width: 300px;
+            height: 200px;
+            border-radius: 20px;
+            border: 2px black solid;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+        .language img:hover{
+            transform: scale(1.05);
+        }
+        .pop img{
+            width: 50%;
+            height: 50%;
+            border-radius: 20px;
+            border: 2px black solid;
+            box-shadow: 5px 5px 5px black;
+            transition: transform 0.3s ease;
+        }
+        .pop img:hover{
+            transform: scale(1.05);
+            box-shadow: 4px 7px 5px black;
+        }
+        .download-btn {
+      background-color: #0bce5c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      margin-bottom: -5px;
+      margin-top: -18px;
+      border: 2px black solid;
+      }
+
+      .download-btn:hover {
+      background-color: #0a923e;
+      }
+    table th {
+        background-color: #f4f4f4;
+        color: #333;
+        font-weight: bold;
+    }
+    table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    table tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+    table tr:hover {
+        background-color: #e0e0e0;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <hr>
+        <h1>🇮🇳 Welcome to The Indian Wiki 🇮🇳</h1>
+        <hr>
+        
+        <button id="logout-btn" onclick="logout()" style="display: none;">Logout</button>
+        
+
+        <img class="logo" src="images/logo.webp">
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+            <a href="/bharatify"><h4 class="heading">Bharatify</h4></a>
+            <h4 class="second">--------------------</h4>
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input
+          type="range"
+          id="volume-slider"
+          min="0"
+          max="1"
+          step="0.1"
+          value="0.5"
+        />
+        </div>
+        <p class="intro">If <a href="https://openai.com/chatgpt" target="_blank">ChatGPT</a> and <a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a> had an Awesome Indian child, it would be this website - an intelligent, ever-growing hub of knowledge where you can explore the rich history, culture, and facts about every state and city in India. Your journey through India's diversity starts here! 🚀🇮🇳</p>
+        <p class="intro">Whether it's giving you the first picture we see on the internet or whether it's us giving you best of information the world has to offer, we are here for You! 💌</p>
+        
+        <p class="intro">
+            India is a land of immense diversity, rich history, and cultural heritage. With 28 states, each region has its own unique traditions, languages, festivals, and landmarks. 
+            Our goal with The Indian Wiki is to provide an easy-to-access platform where users can explore comprehensive information about every Indian state and city. Whether you're a student, traveler, researcher, 
+            or just curious about different regions of India, this website will serve as a one-stop knowledge hub for you. 🧠
+        </p>
+        <p class="intro">
+            From the bustling streets of Mumbai to the serene backwaters of Kerala, from the royal palaces of Rajasthan to the tea gardens of Assam, our platform will take you on a virtual journey across the country.
+            Each state and city page will provide insights into **history, geography, culture, tourism, economy, and local cuisines**. We aim to make this website an **authentic, reliable, and educational** resource 
+            that anyone can use to learn about India's vast landscape. 🌻🌲
+        </p>
+
+        
+        <hr>
+        
+        <h2>Click on an option below to Explore More</p>        
+        <div class="options-container">
+            <div class="option">
+                <a href="/states">
+                    <img src="images/states.jpg" alt="States">
+                    <p>Explore States</p>
+                </a>
+            </div>
+            <h2>OR</h2>
+            <div class="option">
+                <img src="/images/mystery.jpg" id="randomStateImage" alt="Mystery" style="width: 200px; height: 150px;">
+                <p>Mystery State!</p>
+            </div>
+        </div>
+        
+        <hr>
+        <div class="options-container">
+            <div class="option">
+                <a href="/cities">
+                    <img src="images/cities.jpg" alt="Cities">
+                    <p>Explore Cities</p>
+                </a>
+            </div>
+                <h2>OR</h2>
+                <div class="option">
+                    <img src="/images/mystery.jpg" id="randomCityImage" alt="Mystery" style="width: 200px; height: 150px;">
+                    <p>Mystery City!</p>
+                </div>
+        </div>
+        <hr>
+        <h2>----------OR----------</h2>
+        <hr>
+        <br>
+        <div class="option-mystery">
+            <img src="/images/mystery1.png" id="randomImage" alt="Mystery" style="width: 200px; height: 150px;">
+            <h2>Complete Mystery! (State / City)</h2>
+        </div>
+        <hr>
+        <h1>Location of India 📌</h1>
+        <div class="googlemap">
+            <a href="https://www.google.com/maps/place/India/@21.0680074,82.7525294,5z/data=!3m1!4b1!4m6!3m5!1s0x30635ff06b92b791:0xd78c4fa1854213a6!8m2!3d20.593684!4d78.96288!16zL20vMDNyazA?entry=ttu&g_ep=EgoyMDI1MDMyNS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank"><img src="/images/india.png" alt="India" style="width: 100%;"></a>
+            <h3>Click to View on Google Maps</h3>
+        </div>
+
+        <hr>
+        
+
+        <div class="flag">
+            <h1>Flag of India</h1>
+            
+            <img src="/images/indiaflag.png">
+        </div>
+
+        <hr>
+        
+        <div class="emblem">
+            <h1>The Emblem of India</h1>
+            
+            <img src="/images/emblem.jpg">
+        </div>
+        <hr>
+        
+
+        <div class="website">
+            <h1>Official Government Website</h1>
+            
+            <a href="https://www.india.gov.in/" target="_blank"><img src="/images/govt.png"></a>
+        </div>
+        <hr>
+        
+        <div class="language">
+            <h1>Official Languages of India</h1>
+            
+            <a href="https://en.wikipedia.org/wiki/Hindi" target="_blank"><img src="/images/hindi.png"></a>
+            <a href="https://en.wikipedia.org/wiki/English_language" target="_blank"><img src="/images/english.jpg"></a>
+        </div>
+        <hr>
+        <div id="clock-container">
+            <h2>Current Time in India <a href="https://www.timeanddate.com/worldclock/india/delhi" target="_blank">⌚</a><span><p id="clock"></p></span></h2>
+        </div>
+        
+        <hr>
+        
+        <div class="pop">
+            <a href="https://www.worldometers.info/world-population/india-population/" target="_blank"><img src="/images/pop.png"></a>
+            <h1>India's Population as of March 28 2025 - 16:45</h1>
+        </div>
+    </div>
+    <img class="map" src="/images/map.jpg">
+    <h2>**Political Map of India**</h2>
+    <a href="/images/map.jpg" download><button class="download-btn">Download Image</button></a>
+    
+    
+
+    <div class="container">
+        <h1>India's Growing Economy 💹</h1>
+        
+        <div class="money">
+            <img src="/images/money.jpg">
+        </div>
+        
+        <h3>India is one of the fastest-growing economies in the world, with a diverse range of industries contributing to its growth. The country has a strong presence in sectors such as information technology, 
+            pharmaceuticals, agriculture, textiles, and automotive manufacturing. With a large and young population, India offers a vast consumer market and a skilled workforce that is driving innovation and 
+            entrepreneurship across various sectors. The government's focus on infrastructure development, digitalization, and ease of doing business has further boosted the country's economic prospects.</h3>
+        
+        
+        <div class="money">
+            <img src="/images/chart.png">
+            <h2>**One USD in Indian Rupess as of March 2025**</h2>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1>India's Reign in Sports!👑</h1>
+        
+        <div class="sports">
+            <img src="/images/sport.jpg">
+            <img src="/images/sport-1.jpg">
+        </div>
+        <div class="sports">
+            <img src="/images/sport-2.jpg">
+            <img src="/images/sport-3.jpg">
+        </div>
+        <h3>India has made remarkable strides in the world of sports, showcasing its talent and determination on the global stage. From cricket, which is almost a religion in the country, to hockey, where India has a rich legacy of Olympic gold medals, the nation has a diverse sporting culture. In recent years, athletes in sports like badminton, wrestling, boxing, and athletics have brought laurels to the country, with stars like P.V. Sindhu, Neeraj Chopra, and Mary Kom inspiring millions. The rise of leagues such as the Indian Premier League (IPL) and Pro Kabaddi League has further fueled interest in sports, creating a vibrant ecosystem for budding talent. With a growing focus on infrastructure, training, and support for athletes, India is poised to achieve even greater heights in the world of sports.</h3>
+        
+    </div>
+
+    <div class="container-2">
+        <h1>Tourism in India ✈️</h1>
+            <a href="https://en.wikipedia.org/wiki/Red_Fort" target="_blank"><img src="/images/tourism-1.jpg"></a>
+            <a href="https://en.wikipedia.org/wiki/Taj_Mahal" target="_blank"><img src="/images/tourism-2.jpg"></a>
+            <a href="https://en.wikipedia.org/wiki/India_Gate" target="_blank"><img src="/images/tourism-3.jpg"></a>
+            <a href="https://en.wikipedia.org/wiki/Hampi" target="_blank"><img src="/images/tourism-4.jpg"></a>
+        
+        <h3>India is a land of unparalleled beauty and diversity, making it one of the most sought-after tourist destinations in the world. From the majestic Himalayas in the north to the serene beaches of Goa and Kerala in the south, India offers a wide range of experiences for travelers. The country is home to iconic landmarks such as the Taj Mahal, Jaipur's palaces, and the ancient temples of Tamil Nadu. Nature enthusiasts can explore the lush tea gardens of Darjeeling, the backwaters of Kerala, or the wildlife sanctuaries like Ranthambore and Jim Corbett National Park.</h3>
+        <h3>India's vibrant festivals, such as Diwali, Holi, and Durga Puja, provide a glimpse into its rich cultural heritage. Adventure seekers can indulge in trekking, river rafting, and desert safaris, while spiritual travelers can visit sacred sites like Varanasi, Rishikesh, and Amritsar. With its warm hospitality, diverse cuisines, and a blend of ancient traditions and modern attractions, India promises an unforgettable journey for every visitor.</h3>
+        <br>
+        <hr>
+        <table>
+            <tr>
+                <th>Mode of Transport</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td>Air Travel (Air India)</td>
+                <td><a href="https://www.airindia.com/" target="_blank">🛩️ Click Here!</a></td>
+            </tr>
+            <tr>
+                <td>Train Travel (IRCTC)</td>
+                <td><a href="https://www.irctc.co.in/nget/train-search" target="_blank">🚂-🚃 Click Here!</a></td>
+            </tr>
+            <tr>
+                <td>Bus Travel (Red Bus - [Non Government])</td>
+                <td><a href="https://www.redbus.in/" target="_blank">🚌 Click Here!</a></td>
+            </tr>
+        </table>
+        <hr>
+    </div>
+    <div class="review-container">
+        <div class="review-line">
+            <hr class="review-line">
+        </div>
+        <h2>Rate Us!</h2>
+        <div class="stars">
+            <span class="star" data-rating="1">★</span>
+            <span class="star" data-rating="2">★</span>
+            <span class="star" data-rating="3">★</span>
+            <span class="star" data-rating="4">★</span>
+            <span class="star" data-rating="5">★</span>
+        </div>
+        <div class="review-line">
+            <hr class="review-line">
+        </div>
+        <br>
+        <p id="thank-you" style="display: none;">Thanks for your rating!</p>
+    </div>
+    <br>
+    <br>
+    <footer>
+        <div class="footer-bottom">
+            <h3>The Indian Wiki 2025. All Rights Reserved. ©️</h3>
+            <h4>Contact Email :- reach.anirwin@gmail.com 📩</h4>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("bg-music");
+
+    // Restore music position & play if it was playing before
+    if (localStorage.getItem("musicTime")) {
+        audio.currentTime = localStorage.getItem("musicTime");
+    }
+    if (localStorage.getItem("isPlaying") === "true") {
+        audio.play();
+    }
+
+    // Save progress every second
+    setInterval(() => {
+        localStorage.setItem("musicTime", audio.currentTime);
+        localStorage.setItem("isPlaying", !audio.paused);
+    }, 1000);
+});
+function updateClock() {
+    let now = new Date();
+    let options = { timeZone: "Asia/Kolkata", hour12: true, hour: "2-digit", minute: "2-digit", second: "2-digit" };
+    let time = new Intl.DateTimeFormat("en-IN", options).format(now);
+    
+    document.getElementById("clock").textContent = time;
+}
+
+// Update clock every second
+setInterval(updateClock, 1000);
+updateClock(); // Run immediately on load
+
+
+    </script>
+</body>
+</html>

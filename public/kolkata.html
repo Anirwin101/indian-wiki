@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolkata - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .city {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .city img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+    .city:hover {
+        transform: scale(1.1);
+    }
+    .city-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .button:active {
+        transform: scale(0.98);
+    }
+    footer {
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kolkata</h1>
+            <hr>
+            <h2>The City of Joy</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/Kolkata-1.png">
+            </div>
+            <div class="city">
+                <img src="/images/Kolkata-2.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Kolkata-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Kolkata, formerly known as Calcutta, is the capital city of <a href="/states/westbengal">West Bengal</a>. It is a major cultural, economic, and educational hub in Eastern India. Known for its colonial architecture, vibrant festivals, and iconic Howrah Bridge, Kolkata is a city that beautifully blends tradition and modernity.</p>
+        
+        <hr>
+        <h1>Location of Kolkata 📌</h1>
+        <div class="city-container">
+            <div class="city">
+                <a href="https://www.google.com/maps/place/Kolkata/@22.572646,88.363895,11z/data=!3m1!4b1!4m6!3m5!1s0x3a0277e3b1b1b1b:0x4c6f9b8e6bfb!8m2!3d22.572646!4d88.363895!16zL20vMDljNnc?entry=ttu&g_ep=EgoyMDI1MDMyNS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank"><img src="/images/kolkata-1.webp"></a>
+            </div>
+        </div>
+        <p>Click to Explore on Google Maps</p>
+
+        <hr>
+        <h1>History of Kolkata</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/kolkata-4.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/kolkata-5.jpg">
+            </div>
+        </div>
+        <p>Kolkata has a rich history that dates back to the British colonial era. It was the capital of British India until 1911. The city is home to historical landmarks like Victoria Memorial, Indian Museum, and St. Paul's Cathedral.</p>
+        <hr>
+        <h1>Geography and Modern Development</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/kolkata-6.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/kolkata-7.jpg">
+            </div>
+        </div>
+        <p>Located on the eastern bank of the Hooghly River, Kolkata is known for its tropical climate and bustling urban life. The city has seen rapid development in infrastructure, including IT hubs, metro rail, and modern highways, making it a key economic hub in India.</p>
+        <hr>
+        <h1>Cultural and Culinary Heritage</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/kolkata-8.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/kolkata-9.jpg">
+            </div>
+        </div>
+        <p>Kolkata is a cultural treasure trove, famous for its literature, art, and vibrant festivals like Durga Puja. The city is also a food lover's paradise, offering delicacies like rasgulla, mishti doi, kathi rolls, and fish curry.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/cities';">Back to Cities</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mumbai - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .city {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .city img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+    .city:hover {
+        transform: scale(1.1);
+    }
+    .city-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .button:active {
+        transform: scale(0.98);
+    }
+    footer {
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mumbai</h1>
+            <hr>
+            <h2>The City of Dreams</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/Mumbai-1.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Mumbai-2.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Mumbai-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Mumbai, formerly known as Bombay, is the bustling heart of India, a city that never sleeps and a place where millions come to chase their dreams. Nestled along the Arabian Sea, Mumbai is the capital of <a href="/states/maharashtra">Maharashtra</a> and the financial capital of India, housing the Bombay Stock Exchange, major corporate headquarters, and the thriving Bollywood industry. The city has a rich history, having evolved from a group of seven islands into one of the world's most densely populated urban centers. Given to the British as part of the dowry when Princess Catherine of Portugal married King Charles II in 1661, Mumbai grew under British rule into a major trading port, eventually becoming the economic powerhouse of independent India. Today, it stands as a symbol of ambition, resilience, and diversity, where colonial-era architecture coexists with modern skyscrapers, and luxury lifestyles blend seamlessly with the struggles of daily wage workers.</p>
+        
+        <hr>
+        <h1>Location of Mumbai 📌</h1>
+        <div class="city-container">
+            <div class="city">
+                <a href="https://www.google.com/maps/place/Mumbai,+Maharashtra/@19.076090,72.877426,11z/data=!3m1!4b1!4m6!3m5!1s0x3be7ce4c9b8e6bfb:0x4c6f9b8e6bfb!8m2!3d19.076090!4d72.877426!16zL20vMDljNnc?entry=ttu&g_ep=EgoyMDI1MDMyNS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank"><img src="/images/mumbai-.webp"></a>
+            </div>
+        </div>
+        <p>Click to Explore on Google Maps</p>
+
+        <hr>
+        <h1>History of Mumbai</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/mumbai-4.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/mumbai-5.jpg">
+            </div>
+        </div>
+        <p>Mumbai’s history can be traced back to the 2nd and 3rd centuries BCE, when it was part of the Maurya Empire under Emperor Ashoka. The region was an important center for Buddhism, evident from the Kanheri Caves and Elephanta Caves, which still stand as historical monuments today. The islands were ruled by various Indian dynasties, including the Chalukyas, Rashtrakutas, and Shilaharas, before coming under the Gujarat Sultanate in the 14th century. The name "Bombay" is believed to have originated from the Portuguese term "Bomb Aaim" (Good Bay) or from the local Marathi name "Mumbai," which was derived from Mumbadevi, the patron goddess of the Kolis.</p>
+        <hr>
+        <h1>Geography and Modern Development</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/mumbai-6.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/mumbai-7.jpg">
+            </div>
+        </div>
+        <p>Mumbai, often called the "Island City," is located on the western coast of India along the Arabian Sea. It is the capital of the state of Maharashtra and the most populous city in India. Spanning approximately 603 square kilometers, Mumbai is a narrow peninsula that was originally a group of seven islands: Bombay, Colaba, Mazagaon, Parel, Worli, Mahim, and Old Woman’s Island (Little Colaba). Over the centuries, these islands were connected through large-scale land reclamation projects, forming the landmass that Mumbai sits on today.</p>
+        <hr>
+        <h1>Cultural and Culinary Heritage</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/mumbai-8.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/mumbai-9.jpg">
+            </div>
+        </div>
+        <p>Mumbai celebrates every festival with grand enthusiasm, reflecting its multicultural spirit. Ganesh Chaturthi is the biggest festival in the city, where massive idols of Lord Ganesha are worshipped and later immersed in the sea with music, dance, and devotion. Diwali lights up the skyline, while Christmas is beautifully celebrated in Bandra, a historically Christian neighborhood. The city also observes Eid, Navratri, and Holi with equal joy, proving that Mumbai belongs to everyone, regardless of religion or background.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/cities';">Back to Cities</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

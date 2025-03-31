@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chennai - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .city {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .city img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+    .city:hover {
+        transform: scale(1.1);
+    }
+    .city-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .button:active {
+        transform: scale(0.98);
+    }
+    footer {
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chennai</h1>
+            <hr>
+            <h2>The Gateway to South India</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/Chennai-1.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Chennai-2.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Chennai-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Chennai, formerly known as Madras, is the capital city of <a href="/states/tamilnadu">Tamil Nadu</a>. It is a major cultural, economic, and educational hub in South India. Known for its rich heritage, classical music, and iconic Marina Beach, Chennai is a city that beautifully blends tradition and modernity.</p>
+        
+        <hr>
+        <h1>Location of Chennai 📌</h1>
+        <div class="city-container">
+            <div class="city">
+                <a href="https://www.google.com/maps/place/Chennai/@13.0826802,80.2707184,11z/data=!3m1!4b1!4m6!3m5!1s0x3a52664f3a6b6b1:0x4c6f9b8e6bfb!8m2!3d13.0826802!4d80.2707184!16zL20vMDljNnc?entry=ttu&g_ep=EgoyMDI1MDMyNS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank"><img src="/images/chennai-1.png"></a>
+            </div>
+        </div>
+        <p>Click to Explore on Google Maps</p>
+
+        <hr>
+        <h1>History of Chennai</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/chennai-4.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/chennai-5.jpg">
+            </div>
+        </div>
+        <p>Chennai has a rich history that dates back to the 1st century. It was an important center for trade and commerce during the colonial era. The city is home to historical landmarks like Fort St. George, Kapaleeshwarar Temple, and San Thome Basilica.</p>
+        <hr>
+        <h1>Geography and Modern Development</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/chennai-6.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/chennai-7.jpg">
+            </div>
+        </div>
+        <p>Located on the Coromandel Coast of the Bay of Bengal, Chennai is known for its tropical climate and bustling urban life. The city has seen rapid development in infrastructure, including IT parks, metro rail, and modern highways, making it a key economic hub in India.</p>
+        <hr>
+        <h1>Cultural and Culinary Heritage</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/chennai-8.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/chennai-9.jpg">
+            </div>
+        </div>
+        <p>Chennai is a cultural treasure trove, famous for its classical Carnatic music, Bharatanatyam dance, and vibrant festivals like Pongal and Navaratri. The city is also a food lover's paradise, offering delicacies like idli, dosa, filter coffee, and Chettinad cuisine.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/cities';">Back to Cities</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

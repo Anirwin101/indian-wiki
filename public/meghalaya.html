@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meghalaya - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .state {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .state img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .state:hover {
+        transform: scale(1.1);
+    }
+    .state-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Adds space between images */
+        flex-wrap: wrap; /* Ensures responsiveness */
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff; /* Blue color */
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: scale(1.05); /* Slightly increases size */
+    }
+
+    .button:active {
+        transform: scale(0.98); /* Press effect */
+    }
+    footer{
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Meghalaya</h1>
+            <hr>
+            <h2>The Abode of Clouds</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/meghalaya-1.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/meghalaya-2.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/meghalaya-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Meghalaya, located in northeastern India, is known for its breathtaking landscapes, lush greenery, and unique culture. The state shares its borders with Assam and Bangladesh.
+
+            Famous for its living root bridges, Cherrapunji (one of the wettest places on Earth), and the clean village of Mawlynnong, Meghalaya is a haven for nature enthusiasts.</p>
+        
+        <hr>
+        <h1>History of Meghalaya</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/meghalaya-4.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/meghalaya-5.jpg">
+            </div>
+        </div>
+        <p>Meghalaya has a rich history and cultural heritage. It was part of Assam until it became a separate state in 1972. The state is home to the Khasi, Garo, and Jaintia tribes, each with its own distinct traditions and customs.
+
+            The matrilineal society of Meghalaya is one of its unique cultural aspects.</p>
+        <hr>
+        <h1>Geography and Natural Beauty</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/meghalaya-6.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/meghalaya-7.jpg">
+            </div>
+        </div>
+        <p>Meghalaya is characterized by its rolling hills, waterfalls, caves, and dense forests. The state is home to the famous Nohkalikai Falls, Mawsmai Caves, and the sacred forests of Mawphlang.
+
+            Its natural beauty and biodiversity make it a paradise for eco-tourists and adventure seekers.</p>
+        <hr>
+        <h1>Cultural and Linguistic Identity</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/meghalaya-8.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/meghalaya-9.jpg">
+            </div>
+        </div>
+        <p>Meghalaya is known for its vibrant culture, which is reflected in its festivals like Wangala and Shad Suk Mynsiem, traditional music, and handicrafts. The state is also famous for its cuisine, including dishes like Jadoh and Dohneiiong.
+
+            The primary languages spoken in Meghalaya are Khasi, Garo, and English.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/states';">Back to States</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .state {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .state img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .state:hover {
+        transform: scale(1.1);
+    }
+    .state-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .button:active {
+        transform: scale(0.98);
+    }
+    footer{
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="content">
+            <header>
+                <h1>Kerala</h1>
+                <hr>
+                <h2>God's Own Country</h2>
+            </header>
+            <div class="music-container">
+                <audio id="bg-music"></audio>
+            
+                <span id="song-name">Loading...</span>
+                <button id="play-pause-btn">🔊 Play</button>
+                <button id="mute-btn">🔇 Mute</button>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+            </div>
+            <hr>
+            <div class="state-container">
+                <div class="state">
+                    <img src="/images/kerala-1.jpg">
+                </div>
+                <div class="state">
+                    <img src="/images/kerala-2.jpg">
+                </div>
+                <div class="state">
+                    <img src="/images/kerala-3.jpg">
+                </div>
+            </div>
+            <hr>
+            <p>Kerala, located in the southwestern region of India, is renowned for its backwaters, lush greenery, and unique culture. The state is bordered by Karnataka, Tamil Nadu, and the Arabian Sea.
+
+                Known for its traditional art forms, Ayurveda, and spices, Kerala is home to iconic destinations like Alleppey, Munnar, and Wayanad.</p>
+            
+            <hr>
+            <h1>History of Kerala</h1>
+            <div class="state-container">
+                <div class="state">
+                    <img src="/images/kerala-4.jpg">
+                </div>
+                <div class="state">
+                    <img src="/images/kerala-5.jpg">
+                </div>
+            </div>
+            <p>Kerala has a rich history influenced by trade, culture, and colonial powers. It was a major center for the spice trade and attracted traders from across the world. In modern history, Kerala was formed in 1956, unifying Malayalam-speaking regions under the States Reorganization Act.</p>
+            <hr>
+            <h1>Geography and Natural Beauty</h1>
+            <div class="state-container">
+                <div class="state">
+                    <img src="/images/kerala-6.jpg">
+                </div>
+                <div class="state">
+                    <img src="/images/kerala-7.jpg">
+                </div>
+            </div>
+            <p>Kerala is known for its serene backwaters, pristine beaches, and lush hill stations. The state is home to the Western Ghats, Periyar Wildlife Sanctuary, and the tranquil backwaters of Kumarakom and Alleppey.
+
+                Its natural beauty and biodiversity make it a haven for tourists and nature enthusiasts.</p>
+            <hr>
+            <h1>Cultural and Linguistic Identity</h1>
+            <div class="state-container">
+                <div class="state">
+                    <img src="/images/kerala-8.jpg">
+                </div>
+                <div class="state">
+                    <img src="/images/kerala-9.jpg">
+                </div>
+            </div>
+            <p>Kerala is celebrated for its vibrant culture, which includes traditional dance forms like Kathakali and Mohiniyattam, as well as festivals like Onam. The state is also famous for its cuisine, including dishes like Appam, Puttu, and Kerala Sadya.
+
+                The primary language spoken in Kerala is Malayalam, along with other regional dialects.</p>
+            <br>
+            <button class="button" onclick="window.location.href = '/';">Home</button>
+            <button class="button" onclick="window.location.href = '/states';">Back to States</button>
+            <br>
+            <br>
+            <footer>
+                <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

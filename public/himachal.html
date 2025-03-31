@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himachal Pradesh - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .p {
+        font-size: 15px;
+    }
+    .state {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .state img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .state:hover {
+        transform: scale(1.1);
+    }
+    .state-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Adds space between images */
+        flex-wrap: wrap; /* Ensures responsiveness */
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff; /* Blue color */
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: scale(1.05); /* Slightly increases size */
+    }
+
+    .button:active {
+        transform: scale(0.98); /* Press effect */
+    }
+    footer{
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Himachal Pradesh</h1>
+            <hr>
+            <h2>The Land of Snow</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/himachal-1.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/himachal-2.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/himachal-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Himachal Pradesh, located in northern India, is known for its breathtaking landscapes, serene valleys, and snow-capped mountains. It is a popular destination for nature lovers and adventure enthusiasts.
+
+            Himachal Pradesh is famous for its vibrant culture, traditional music, and dance forms like Nati. The state is also known for its handicrafts and woolen shawls.</p>
+        
+        <hr>
+        <h1>History of Himachal Pradesh</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/himachal-4.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/himachal-5.jpg">
+            </div>
+        </div>
+        <p>Himachal Pradesh has a rich history that dates back to ancient times. It was home to several kingdoms and dynasties, including the Mauryas and the Guptas.
+
+            The state has been a witness to various historical events and is known for its ancient temples and monasteries. Today, Himachal Pradesh is celebrated for its cultural heritage and natural beauty.</p>
+        <hr>
+        <h1>Geography and Natural Beauty</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/himachal-6.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/himachal-7.jpg">
+            </div>
+        </div>
+        <p>Himachal Pradesh is characterized by its majestic mountains, lush green valleys, and pristine rivers. The state is a haven for trekkers, campers, and nature enthusiasts.
+
+            Himachal's natural beauty includes places like Shimla, Manali, Dharamshala, and Spiti Valley, which attract tourists from all over the world.</p>
+        <hr>
+        <h1>Cultural and Culinary Delights</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/himachal-8.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/himachal-9.jpg">
+            </div>
+        </div>
+        <p>Himachal Pradesh is known for its rich culture, which is deeply rooted in its traditions and customs. The state celebrates festivals like:</p>
+        <ul>
+            <li>Dussehra – A grand celebration in Kullu with traditional music and dance.</li>
+            <li>Lohri – A harvest festival celebrated with bonfires and folk songs.</li>
+            <li>Minjar Fair – A cultural fair showcasing local crafts and traditions.</li>
+        </ul>
+        <p>Himachali cuisine is simple yet delicious, featuring dishes like siddu, dham, and chana madra. The use of fresh ingredients and traditional cooking methods defines the unique taste of Himachali food.</p>
+        <hr>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/states';">Back to States</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

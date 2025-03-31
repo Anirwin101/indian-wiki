@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikkim - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .state {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .state img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .state:hover {
+        transform: scale(1.1);
+    }
+    .state-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Adds space between images */
+        flex-wrap: wrap; /* Ensures responsiveness */
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff; /* Blue color */
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: scale(1.05); /* Slightly increases size */
+    }
+
+    .button:active {
+        transform: scale(0.98); /* Press effect */
+    }
+    footer{
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sikkim</h1>
+            <hr>
+            <h2>The Land of Mystical Beauty</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/sikkim-1.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/sikkim-2.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/sikkim-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Sikkim, located in northeastern India, is known for its breathtaking landscapes, serene monasteries, and vibrant culture. The state is often referred to as the "Land of Mystical Beauty" due to its stunning natural scenery and spiritual significance.
+
+            Famous for its snow-capped mountains, lush valleys, and unique biodiversity, Sikkim is a paradise for nature lovers and adventure enthusiasts.</p>
+        
+        <hr>
+        <h1>History of Sikkim</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/sikkim-4.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/sikkim-5.png">
+            </div>
+        </div>
+        <p>Sikkim has a rich history and was once an independent kingdom before becoming a part of India in 1975. The state is known for its ancient monasteries, including Rumtek and Pemayangtse, which reflect its deep-rooted Buddhist heritage.
+
+            Sikkim's history is intertwined with its cultural and spiritual traditions, making it a unique destination.</p>
+        <hr>
+        <h1>Geography and Natural Beauty</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/sikkim-6.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/sikkim-7.jpg">
+            </div>
+        </div>
+        <p>Sikkim is characterized by its towering Himalayan peaks, including Kanchenjunga, the third-highest mountain in the world. The state is home to pristine lakes, cascading waterfalls, and diverse flora and fauna.
+
+            Its natural beauty and tranquil environment make it a popular destination for eco-tourism and spiritual retreats.</p>
+        <hr>
+        <h1>Cultural and Linguistic Identity</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/sikkim-8.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/sikkim-9.jpg">
+            </div>
+        </div>
+        <p>Sikkim is known for its harmonious blend of cultures, traditional festivals, and delicious cuisine. The state celebrates festivals like Losar, Saga Dawa, and Pang Lhabsol with great enthusiasm.
+
+            The primary languages spoken in Sikkim include Nepali, Bhutia, and Lepcha.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/states';">Back to States</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

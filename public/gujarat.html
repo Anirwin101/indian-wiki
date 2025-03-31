@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gujarat - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .p{
+        font-size: 15px;
+    }
+    .state {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+    .state img {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+    }
+    .state:hover {
+            transform: scale(1.1);
+        }
+        .state-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between images */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+.button {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly increases size */
+}
+
+.button:active {
+    transform: scale(0.98); /* Press effect */
+}
+footer{
+        border-radius: 10px;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gujarat</h1>
+            <hr>
+            <h2>The Land of Legends and Vibrant Culture</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="state-container">
+            <div class="state">
+                <image src="/images/gujarat-1.jpg" alt="Gujarat"></image>
+            </div>
+            <div class="state">
+                <image src="/images/gujarat-2.jpg" alt="Gujarat"></image>
+            </div>
+            <div class="state">
+                <image src="/images/gujarat-3.jpg" alt="Gujarat"></image>
+            </div>
+        </div>
+        <hr>
+        <p>Gujarat, located in the western part of India, is a state known for its rich history, cultural diversity, and economic significance. It is the fifth-largest state in India by area and has the longest coastline (1,600 km) among all Indian states. Gujarat is often referred to as the "Jewel of Western India" due to its vibrant traditions and industrial growth.</p>
+        <h1>History of Gujarat</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/gujarat-4.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/gujarat-5.jpg">
+            </div>
+        </div>
+        <p>Gujarat has a rich historical legacy that dates back to the Indus Valley Civilization. It was a major center for trade and culture under various dynasties like the Mauryas, Guptas, Chalukyas, and the Mughals. The state played a significant role in India's freedom struggle, being the birthplace of Mahatma Gandhi. The iconic Sabarmati Ashram in Ahmedabad stands as a testament to his legacy.</p>
+        <hr>
+        <h1>Geography and Natural Beauty</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/gujarat-6.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/gujarat-7.jpg">
+            </div>
+        </div>
+        <p>Gujarat is a land of diverse landscapes, ranging from the Great Rann of Kutch to the Gir Forest, home to the Asiatic lions. The state is also known for its beautiful beaches, temples, and historical sites. Popular destinations include the Somnath Temple, Dwarka, Saputara Hill Station, and the Statue of Unity, the world's tallest statue.</p>
+        <hr>
+        <h1>Cultural and Linguistic Identity</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/gujarat-8.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/gujarat-9.jpg">
+            </div>
+        </div>
+        <p>The primary language spoken in Gujarat is Gujarati, known for its rich literary heritage. The state's culture is deeply rooted in its traditional dance forms like Garba and Dandiya Raas, which are celebrated during the Navratri festival. Gujarat is also famous for its handicrafts, textiles, and cuisine, including dishes like Dhokla, Thepla, and Fafda.</p>
+        <hr>
+        <h1>Economy and Industrial Growth</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/gujarat-10.png">
+            </div>
+            <div class="state">
+                <img src="/images/gujarat-11.jpg">
+            </div>
+        </div>
+        <p>The economy of Gujarat is one of the most industrialized in India, driven by sectors like petrochemicals, textiles, and pharmaceuticals. The state is a hub for trade and commerce, with major ports like Kandla and Mundra. Gujarat is also a leader in renewable energy, particularly solar and wind power.</p>
+        
+        <p>The state is known for its entrepreneurial spirit and has attracted significant investments in infrastructure and industries. Cities like Ahmedabad, Surat, and Vadodara are rapidly growing as economic powerhouses.</p>
+        
+            <button class="button" onclick="window.location.href = '/';">Home</button>
+            <button class="button" onclick="window.location.href = '/states';">Back to States</button>
+            <br>
+            <br>
+            <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

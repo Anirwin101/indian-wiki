@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyderabad - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .city {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .city img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+    .city:hover {
+        transform: scale(1.1);
+    }
+    .city-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .button:active {
+        transform: scale(0.98);
+    }
+    footer {
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hyderabad</h1>
+            <hr>
+            <h2>The City of Pearls</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/Hyderabad-1.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Hyderabad-2.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Hyderabad-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Hyderabad, the capital of <a href="/states/telangana">Telangana</a>, is a historic city known for its iconic landmarks, rich culture, and delicious cuisine. It is famous for the Charminar, Golconda Fort, and the world-renowned Hyderabadi biryani.</p>
+        
+        <hr>
+        <h1>Location of Hyderabad 📌</h1>
+        <div class="city-container">
+            <div class="city">
+                <a href="https://www.google.com/maps/place/Hyderabad,+Telangana/@17.4123487,78.4080455,11z/data=!3m1!4b1!4m6!3m5!1s0x3bcb99daeaebd2c7:0xae93b78392bafbc2!8m2!3d17.406498!4d78.4772439!16zL20vMDljNnc?entry=ttu&g_ep=EgoyMDI1MDMyNS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank"><img src="/images/hyderabad-1.png"></a>
+            </div>
+        </div>
+        <p>Click to Explore on Google Maps</p>
+
+        <hr>
+        <h1>History of Hyderabad</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/hyderabad-4.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/hyderabad-5.jpg">
+            </div>
+        </div>
+        <p>Hyderabad was founded in 1591 by Muhammad Quli Qutb Shah. It served as the capital of the Qutb Shahi dynasty and later became an important center under the Nizams of Hyderabad. The city has a rich historical legacy and is home to several architectural marvels.</p>
+        <hr>
+        <h1>Geography and Modern Development</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/hyderabad-6.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/hyderabad-7.jpg">
+            </div>
+        </div>
+        <p>Hyderabad is located on the Deccan Plateau and is known for its unique blend of old-world charm and modern infrastructure. The city is a major IT hub, often referred to as "Cyberabad," and is home to several multinational companies and startups.</p>
+        <hr>
+        <h1>Cultural and Culinary Heritage</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/hyderabad-8.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/hyderabad-9.jpg">
+            </div>
+        </div>
+        <p>Hyderabad is a melting pot of cultures, with a vibrant arts scene, traditional crafts, and a rich culinary heritage. The city celebrates festivals like Eid, Diwali, and Bonalu with great enthusiasm. Its cuisine, especially the biryani and haleem, is world-famous.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/cities';">Back to Cities</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goa - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+</head>
+<style>
+    .p {
+        font-size: 15px;
+    }
+    .state {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .state img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .state:hover {
+        transform: scale(1.1);
+    }
+    .state-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Adds space between images */
+        flex-wrap: wrap; /* Ensures responsiveness */
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff; /* Blue color */
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: scale(1.05); /* Slightly increases size */
+    }
+
+    .button:active {
+        transform: scale(0.98); /* Press effect */
+    }
+    footer{
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Goa</h1>
+            <hr>
+            <h2>The Pearl of the Orient</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/goa-1.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/goa-2.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/goa-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Goa, located on the western coast of India, is renowned for its stunning beaches, vibrant nightlife, and Portuguese heritage. It is one of the most popular tourist destinations in India, attracting visitors from around the world.
+
+            Goa is famous for its seafood, water sports, and unique blend of Indian and Portuguese cultures. The state is also known for its festivals, including the Goa Carnival and Shigmo.</p>
+        
+        <hr>
+        <h1>History of Goa</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/goa-4.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/goa-5.jpg">
+            </div>
+        </div>
+        <p>Goa has a rich history that dates back to ancient times. It was a major trading hub for spices and other goods. The Portuguese colonized Goa in the 16th century, leaving a lasting impact on its culture, architecture, and cuisine.
+
+            Goa was liberated from Portuguese rule in 1961 and became a part of India. Today, it is celebrated for its unique cultural identity and historical landmarks, such as the Basilica of Bom Jesus and Fort Aguada.</p>
+        <hr>
+        <h1>Geography and Natural Beauty</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/goa-6.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/goa-7.jpg">
+            </div>
+        </div>
+        <p>Goa is characterized by its golden sandy beaches, lush green landscapes, and serene backwaters. The state is divided into North Goa and South Goa, each offering unique experiences for visitors.
+
+            Goa's tropical climate and scenic beauty make it a paradise for nature lovers. Popular beaches include Baga, Calangute, and Palolem, while Dudhsagar Falls and the Salim Ali Bird Sanctuary are must-visit attractions.</p>
+        <hr>
+        <h1>Cultural and Culinary Delights</h1>
+        <div class="state-container">
+            <div class="state">
+                <img src="/images/goa-8.jpg">
+            </div>
+            <div class="state">
+                <img src="/images/goa-9.jpg">
+            </div>
+        </div>
+        <p>Goa is known for its vibrant culture, which is a blend of Indian and Portuguese influences. The state is famous for its music, dance, and festivals, such as:</p>
+        <ul>
+            <li>Goa Carnival – A colorful celebration with parades, music, and dance.</li>
+            <li>Shigmo – A traditional festival celebrated with folk dances and processions.</li>
+            <li>Feast of St. Francis Xavier – A religious event attracting pilgrims from around the world.</li>
+        </ul>
+        <p>Goan cuisine is a highlight of any visit, featuring dishes like fish curry, vindaloo, and bebinca. The use of coconut, spices, and seafood defines the unique flavors of Goan food.</p>
+        <hr>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/states';">Back to States</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

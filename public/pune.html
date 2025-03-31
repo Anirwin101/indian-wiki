@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pune - Indian Wiki</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+</head>
+<style>
+    .p {
+        font-size: 15px;
+        font-family: 'Pacifico', cursive;
+    }
+    .city {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .city img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+    .city:hover {
+        transform: scale(1.1);
+    }
+    .city-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    li {
+        padding: 10px;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+    .button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .button:active {
+        transform: scale(0.98);
+    }
+    footer {
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pune</h1>
+            <hr>
+            <h2>The Cultural Capital of Maharashtra</h2>
+        </header>
+        <div class="music-container">
+            <audio id="bg-music"></audio>
+        
+            <span id="song-name">Loading...</span>
+            <button id="play-pause-btn">🔊 Play</button>
+            <button id="mute-btn">🔇 Mute</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <hr>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/Pune-1.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Pune-2.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/Pune-3.jpg">
+            </div>
+        </div>
+        <hr>
+        <p>Pune, known as <a href="/states/maharashtra">Maharashtra</a>’s cultural and IT hub, has experienced rapid development in infrastructure, education, technology, and industry. The city is a major IT and startup hub, with Rajiv Gandhi IT Park in Hinjewadi housing top companies like Infosys, Wipro, and TCS. Pune’s real estate sector is booming with new residential and commercial projects. Metro rail development, improved road networks, and flyovers are enhancing connectivity. As an education hub, Pune is home to prestigious institutions like Savitribai Phule Pune University, COEP, and Symbiosis. The automotive and manufacturing sectors thrive in areas like Pimpri-Chinchwad and Chakan, with companies like Tata Motors and Bajaj Auto. The city is also a major healthcare destination with top hospitals and medical research centers. Pune’s pleasant climate, growing job opportunities, and mix of modern and traditional culture make it one of India’s most livable cities.</p>
+        
+        <hr>
+        <h1>Location of Pune 📌</h1>
+        <div class="city-container">
+            <div class="city">
+                <a href="https://www.google.com/maps/place/Pune/@18.5204,73.8567,11z/data=!3m1!4b1!4m6!3m5!1s0x3bc2c06c6c6c6c6c:0x6c6c6c6c6c6c6c6c!8m2!3d18.5204!4d73.8567!16zL20vMDljNnc?entry=ttu&g_ep=EgoyMDI1MDMyNS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank"><img src="/images/pune-1.webp"></a>
+            </div>
+        </div>
+        <p>Click to Explore on Google Maps</p>
+
+        <hr>
+        <h1>History of Pune</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/pune-4.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/pune-5.jpg">
+            </div>
+        </div>
+        <p>Pune has a rich history, dating back to the 8th century, when it was known as Punnaka. It rose to prominence in the 17th century under Chhatrapati Shivaji Maharaj, who spent his early years here and established it as a key center of the Maratha Empire. Later, in the 18th century, Pune became the headquarters of the Peshwas, the prime ministers of the Maratha Empire, making it a political and cultural hub. After the British defeated the Peshwas in 1818, Pune became an important cantonment town under British rule, with institutions like the Deccan College and Fergusson College shaping its intellectual landscape. During the freedom struggle, Pune played a vital role, with leaders like Bal Gangadhar Tilak leading nationalist movements. Post-independence, the city transformed into an industrial, educational, and IT hub, earning the title "Oxford of the East" due to its many prestigious institutions. Today, Pune is a dynamic city blending history with modern development.</p>
+        <hr>
+        <h1>Geography and Modern Development</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/pune-6.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/pune-7.jpg">
+            </div>
+        </div>
+        <p>Pune has seen massive development across IT, education, infrastructure, and industry, making it one of India’s fastest-growing cities. The IT and startup ecosystem has flourished, with tech parks in Hinjewadi, Magarpatta, and Kharadi hosting companies like Infosys, TCS, and Accenture. Infrastructure growth includes the Pune Metro, new highways, and smart city projects improving transport and connectivity. Education remains a strong pillar, with top institutions like Savitribai Phule Pune University, COEP, and Symbiosis attracting students from across India. The automobile and manufacturing sectors thrive in Pimpri-Chinchwad and Chakan, home to Tata Motors, Bajaj Auto, and Mercedes-Benz. Healthcare expansion has led to world-class hospitals and medical research centers. The real estate market is booming due to increasing job opportunities, and Pune’s cultural and nightlife scene is growing, making it a balanced mix of tradition and modernity.</p>
+        <hr>
+        <h1>Cultural and Culinary Heritage</h1>
+        <div class="city-container">
+            <div class="city">
+                <img src="/images/pune-8.jpg">
+            </div>
+            <div class="city">
+                <img src="/images/pune-9.jpg">
+            </div>
+        </div>
+        <p>Pune’s culture is a unique blend of tradition and modernity, deeply rooted in its Maratha heritage while embracing a cosmopolitan lifestyle. It is known as the "Cultural Capital of Maharashtra", with festivals like Ganesh Chaturthi celebrated grandly, thanks to Lokmanya Tilak, who popularized it here. The city has a strong theater and arts scene, with venues like Bal Gandharva Rang Mandir hosting Marathi plays and cultural events. Pune is also famous for classical music, with events like the Sawai Gandharva Bhimsen Mahotsav attracting legendary musicians. The city’s literary culture is strong, with a rich legacy of Marathi literature and intellectual movements. At the same time, Pune has a thriving nightlife, café culture, and modern art scene, with Koregaon Park and FC Road buzzing with young energy. The presence of students from across India gives Pune a diverse, youthful vibe while still maintaining its deep-rooted Maharashtrian traditions.</p>
+        <br>
+        <button class="button" onclick="window.location.href = '/';">Home</button>
+        <button class="button" onclick="window.location.href = '/cities';">Back to Cities</button>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2025 Indian Wiki. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>

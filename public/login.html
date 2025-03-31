@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/images/logo1.png">
+
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #003cff, #00d4ff);
+            animation: gradientBG 8s ease infinite;
+        }
+        /* Login Container */
+        .login-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            animation: fadeIn 0.5s ease-in-out;
+            transition: transform 0.3s ease-in-out;
+        }
+        .login-container:hover {
+            transform: scale(1.1);
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+            color: #000;
+            font-size: 24px;
+        }
+        /* Error Message */
+        .error-message {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: none;
+            font-size: 18px;
+        }
+        /* Form Fields */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .form-group input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+        }
+        /* Button */
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #007bff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .login-btn:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+        /* Signup Link */
+        .signup-link {
+            margin-top: 15px;
+            font-size: 15px;
+        }
+        .signup-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+        .error-message {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: none;
+            font-size: 18px;
+        }   
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login into Your Account</h1>
+        <h1 class="error-message" id="error-message"></h1>
+
+        <form id="login-form">
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+
+        <div class="signup-link">
+            <p>New Here? <a href="/signup">Sign up here!</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", async function(event) {
+    event.preventDefault(); // Prevent page reload
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const errorMessage = document.getElementById("error-message");
+
+    try {
+        const response = await fetch("/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
+        });
+
+        const text = await response.text(); // Get plain text response
+
+        if (text === "Incorrect password") {
+            errorMessage.innerText = "Incorrect password!";
+            errorMessage.style.display = "block";
+            errorMessage.style.color = "red"; // Ensure it's red
+        } else if (text === "User not found") {
+            errorMessage.innerText = "User not found!";
+            errorMessage.style.display = "block";
+            errorMessage.style.color = "red"; // Ensure it's red
+        } else {
+            window.location.href = "/"; // Redirect if successful
+        }
+        } catch (error) {
+        console.error("Error:", error);
+        }
+        });
+
+    </script>
+</body>
+</html>
