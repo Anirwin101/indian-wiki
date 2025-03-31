@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const dotenv = require('dotenv');
 const bcrypt = require("bcryptjs");
 const bodyParser = require("body-parser");
 const session = require("express-session");
@@ -30,12 +31,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // 🔹 2️⃣ Connect to MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/indian-wiki", {
+mongoose.connect("mongodb+srv://reachanirwin:reachanirwin@indianwikicluster.4lfjbfc.mongodb.net/?retryWrites=true&w=majority&appName=IndianWikiCluster", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
 .then(() => console.log("✅ Connected to MongoDB"))
 .catch(err => console.error("❌ MongoDB Connection Error:", err));
+
+dotenv.config(); // Load environment variables
+
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(() => console.log('✅ MongoDB Connected'))
+.catch(err => console.error('❌ MongoDB Connection Error:', err));
 
 // 🔹 3️⃣ Middleware for Authentication
 function isAuthenticated(req, res, next) {
