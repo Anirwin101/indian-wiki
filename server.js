@@ -20,7 +20,7 @@ app.use(
         cookie: {
             maxAge: 1000 * 60 * 60, // 1-hour session
             httpOnly: true, // Prevents client-side JS from accessing it
-            secure: process.env.NODE_ENV === 'production', // Set to true in production (with HTTPS)
+            secure: false, // Set to true if using HTTPS
             sameSite: "lax" // Helps with cross-site requests
         }
     })
@@ -34,32 +34,21 @@ app.use(express.urlencoded({ extended: true }));
 // 🔹 2️⃣ Connect to MongoDB // Load environment variables
 const mongoURI = process.env.MONGODB_URI; // This will pull the value from Render's environment variables
 
-// Use the environment variable for the connection
-mongoose.connect('mongodb+srv://reachanirwin:secret13@indianwikicluster.4lfjbfc.mongodb.net/?retryWrites=true&w=majority&appName=IndianWikiCluster', {
-    serverSelectionTimeoutMS: 30000
-})
-.then(() => console.log("Connected to MongoDB"))
-.catch(err => console.error("MongoDB connection error:", err));
+mongoose.connect(mongoURI)
+  .then(() => {
+    console.log('Connected to MongoDB Atlas!');
+  })
+  .catch(err => {
+    console.error('MongoDB connection error:', err);
+  });
 
-
-
-const Redis = require('redis');
-const connectRedis = require('connect-redis');
-
-// Create a Redis client
-const redisClient = Redis.createClient();
-
-// Use RedisStore with express-session
-const RedisStore = connectRedis(session);
-
-app.use(session({
-  store: new RedisStore({ client: redisClient }),
-  secret: 'your-secret-key',
-  resave: false,
-  saveUninitialized: false,
-}));
-
-
+  mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => console.log("Connected to MongoDB"))
+  .catch(err => console.error("MongoDB connection error:", err));
+  
 // 🔹 3️⃣ Middleware for Authentication
 function isAuthenticated(req, res, next) {
     console.log("🔍 Session Data:", req.session); // Debugging session
@@ -70,7 +59,6 @@ function isAuthenticated(req, res, next) {
     console.log("❌ No user session, redirecting to /signup");
     res.redirect("/signup");
 }
-
 
 // 🔹 4️⃣ Authentication Routes
 app.get("/signup", (req, res) => res.sendFile(path.join(__dirname, "public", "signup.html")));
@@ -92,15 +80,6 @@ app.post("/signup", async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 });
-const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://reachanirwin:secret13@indianwikicluster.4lfjbfc.mongodb.net/";
-
-MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(client => {
-    console.log("Connected to MongoDB Atlas");
-    // Your MongoDB operations here
-  })
-  .catch(err => console.error(err));
 
 app.get("/login", (req, res) => res.sendFile(path.join(__dirname, "public", "login.html")));
 
@@ -128,11 +107,8 @@ app.post("/login", async (req, res) => {
     }
 });
 
-app.get('/logout', (req, res) => {
-    req.session.destroy((err) => {
-      if (err) return res.send("Error logging out");
-      res.redirect('/');
-    });
+app.get("/logout", (req, res) => {
+    req.session.destroy(() => res.redirect("/login"));
 });
 
 app.post("/submit-rating", (req, res) => {
