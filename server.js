@@ -250,6 +250,10 @@ app.get("/states/telangana", isAuthenticated, (req, res) => {
     console.log("✅ Accessing /states/telangana");
     res.sendFile(path.join(__dirname, "public", "telangana.html"));
 });
+app.get("/states/tripura", isAuthenticated, (req, res) => {
+    console.log("✅ Accessing /states/tripura");
+    res.sendFile(path.join(__dirname, "public", "tripura.html"));
+});
 app.get("/states/uttarakhand", isAuthenticated, (req, res) => {
     console.log("✅ Accessing /states/uttarakhand");
     res.sendFile(path.join(__dirname, "public", "uttarakhand.html"));
