@@ -76,7 +76,7 @@ app.post("/signup", async (req, res) => {
     }
 });
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://reachanirwin:mysecretpassword@indianwikicluster.4lfjbfc.mongodb.net/";
+const uri = "mongodb+srv://reachanirwin:secret13@indianwikicluster.4lfjbfc.mongodb.net/";
 
 MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(client => {
