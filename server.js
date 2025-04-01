@@ -42,14 +42,19 @@ mongoose.connect('mongodb+srv://reachanirwin:secret13@indianwikicluster.4lfjbfc.
 .catch(err => console.error("MongoDB connection error:", err));
 
 
-const RedisStore = require('connect-redis')(session);
-const redis = require('redis');
 
-const client = redis.createClient();
+const Redis = require('redis');
+const connectRedis = require('connect-redis');
+
+// Create a Redis client
+const redisClient = Redis.createClient();
+
+// Use RedisStore with express-session
+const RedisStore = connectRedis(session);
 
 app.use(session({
-  store: new RedisStore({ client }),
-  secret: 'secret13',
+  store: new RedisStore({ client: redisClient }),
+  secret: 'your-secret-key',
   resave: false,
   saveUninitialized: false,
 }));
