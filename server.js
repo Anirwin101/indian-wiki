@@ -20,11 +20,12 @@ app.use(
         cookie: {
             maxAge: 1000 * 60 * 60, // 1-hour session
             httpOnly: true, // Prevents client-side JS from accessing it
-            secure: false, // Set to true if using HTTPS
+            secure: process.env.NODE_ENV === 'production', // Set to true in production (with HTTPS)
             sameSite: "lax" // Helps with cross-site requests
         }
     })
 );
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
