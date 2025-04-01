@@ -6,7 +6,7 @@ const UserSchema = new mongoose.Schema({
     password: { type: String, required: true },
 });
 
-
+userSchema.index({ email: 1 });
 
 
 module.exports = mongoose.model("User", UserSchema);
