@@ -75,6 +75,15 @@ app.post("/signup", async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 });
+const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://reachanirwin:mysecretpassword@indianwikicluster.4lfjbfc.mongodb.net/";
+
+MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(client => {
+    console.log("Connected to MongoDB Atlas");
+    // Your MongoDB operations here
+  })
+  .catch(err => console.error(err));
 
 app.get("/login", (req, res) => res.sendFile(path.join(__dirname, "public", "login.html")));
 
