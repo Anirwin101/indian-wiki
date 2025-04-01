@@ -34,7 +34,7 @@ app.use(express.urlencoded({ extended: true }));
 // 🔹 2️⃣ Connect to MongoDB // Load environment variables
 const mongoURI = process.env.MONGODB_URI; // This will pull the value from Render's environment variables
 
-mongoose.connect(mongoURI)
+mongoose.connect('mongodb+srv://reachanirwin:secret13@indianwikicluster.4lfjbfc.mongodb.net/test?retryWrites=true&w=majority')
   .then(() => {
     console.log('Connected to MongoDB Atlas!');
   })
