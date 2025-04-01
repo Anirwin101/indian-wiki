@@ -6,8 +6,10 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const path = require("path");
 const redis = require('redis');
-const RedisStore = require('connect-redis').default;
+
 const User = require("./models/User");
+const { createClient } = redis;
+const RedisStore = require("connect-redis").default;
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -21,19 +23,19 @@ redisClient.connect().catch(console.error);
 
 // 🔹 2️⃣ Session Configuration with Redis Store
 app.use(
-  session({
-    store: new RedisStore({ client: redisClient }),
-    secret: process.env.SESSION_SECRET || "supersecretkey",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 1000 * 60 * 60, // 1-hour session
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: "lax"
-    }
-  })
-);
+    session({
+      store: new RedisStore({ client: redisClient }),
+      secret: process.env.SESSION_SECRET || "secret13",
+      resave: false,
+      saveUninitialized: false,
+      cookie: {
+        maxAge: 1000 * 60 * 60, // 1-hour session
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: "lax"
+      }
+    })
+  );
 
 // 🔹 3️⃣ Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
