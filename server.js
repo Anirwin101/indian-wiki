@@ -42,7 +42,6 @@ mongoose.connect('mongodb+srv://reachanirwin:secret13@indianwikicluster.4lfjbfc.
 .catch(err => console.error("MongoDB connection error:", err));
 
 
-const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
 const redis = require('redis');
 
