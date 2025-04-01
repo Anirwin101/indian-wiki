@@ -102,8 +102,11 @@ app.post("/login", async (req, res) => {
     }
 });
 
-app.get("/logout", (req, res) => {
-    req.session.destroy(() => res.redirect("/login"));
+app.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+      if (err) return res.send("Error logging out");
+      res.redirect('/');
+    });
 });
 
 app.post("/submit-rating", (req, res) => {
