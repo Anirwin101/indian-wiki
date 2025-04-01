@@ -35,13 +35,26 @@ app.use(express.urlencoded({ extended: true }));
 const mongoURI = process.env.MONGODB_URI; // This will pull the value from Render's environment variables
 
 // Use the environment variable for the connection
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+mongoose.connect('mongodb+srv://reachanirwin:secret13@indianwikicluster.4lfjbfc.mongodb.net/?retryWrites=true&w=majority&appName=IndianWikiCluster', {
     serverSelectionTimeoutMS: 30000
 })
 .then(() => console.log("Connected to MongoDB"))
 .catch(err => console.error("MongoDB connection error:", err));
+
+
+const session = require('express-session');
+const RedisStore = require('connect-redis')(session);
+const redis = require('redis');
+
+const client = redis.createClient();
+
+app.use(session({
+  store: new RedisStore({ client }),
+  secret: 'secret13',
+  resave: false,
+  saveUninitialized: false,
+}));
+
 
 // 🔹 3️⃣ Middleware for Authentication
 function isAuthenticated(req, res, next) {
