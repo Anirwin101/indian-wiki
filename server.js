@@ -26,7 +26,6 @@ app.use(
     })
 );
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(express.json());
@@ -35,21 +34,14 @@ app.use(express.urlencoded({ extended: true }));
 // 🔹 2️⃣ Connect to MongoDB // Load environment variables
 const mongoURI = process.env.MONGODB_URI; // This will pull the value from Render's environment variables
 
-mongoose.connect('mongodb+srv://reachanirwin:secret13@indianwikicluster.4lfjbfc.mongodb.net/test?retryWrites=true&w=majority')
-  .then(() => {
-    console.log('Connected to MongoDB Atlas!');
-  })
-  .catch(err => {
-    console.error('MongoDB connection error:', err);
-  });
-
-  mongoose.connect(process.env.MONGO_URI, {
+// Use the environment variable for the connection
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
-  })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch(err => console.error("MongoDB connection error:", err));
-  
+})
+.then(() => console.log("Connected to MongoDB"))
+.catch(err => console.error("MongoDB connection error:", err));
+
 // 🔹 3️⃣ Middleware for Authentication
 function isAuthenticated(req, res, next) {
     console.log("🔍 Session Data:", req.session); // Debugging session
@@ -60,6 +52,7 @@ function isAuthenticated(req, res, next) {
     console.log("❌ No user session, redirecting to /signup");
     res.redirect("/signup");
 }
+
 
 // 🔹 4️⃣ Authentication Routes
 app.get("/signup", (req, res) => res.sendFile(path.join(__dirname, "public", "signup.html")));
