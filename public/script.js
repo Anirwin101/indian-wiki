@@ -191,83 +191,95 @@ const songs = [
 
 let currentSongIndex = parseInt(localStorage.getItem("songIndex")) || 0;
 
-// ✅ Restore song progress & play state
+// Function to play a song
+function playSong(index) {
+    if (index >= songs.length) index = 0;
+    if (index < 0) index = songs.length - 1;
+
+    console.log("Playing:", songs[index].name);
+    currentSongIndex = index;
+    music.src = songs[currentSongIndex].src;
+    songNameDisplay.textContent = "Now Playing: " + songs[currentSongIndex].name;
+    
+    // Load the new song and play when ready
+    music.load();
+    music.oncanplay = () => {
+        if (localStorage.getItem("isPlaying") === "true") {
+            music.play().catch(e => console.error("Play failed:", e));
+            playPauseBtn.textContent = "⏸ Pause";
+        }
+    };
+    
+    localStorage.setItem("songIndex", currentSongIndex);
+}
+
+// Restore state on page load
 document.addEventListener("DOMContentLoaded", () => {
-    music.volume = parseFloat(localStorage.getItem("musicVolume")) || 0.5;
+    // Volume
+    const savedVolume = parseFloat(localStorage.getItem("musicVolume"));
+    music.volume = isNaN(savedVolume) ? 0.5 : Math.min(1, Math.max(0, savedVolume));
     volumeSlider.value = music.volume;
 
+    // Mute state
     if (localStorage.getItem("isMuted") === "true") {
         music.muted = true;
         muteBtn.textContent = "🔊 Unmute";
     }
 
-    // Restore the song and progress
-    playSong(currentSongIndex, false);
+    // Play the current song
+    playSong(currentSongIndex);
 
-    if (localStorage.getItem("musicTime")) {
-        music.currentTime = parseFloat(localStorage.getItem("musicTime"));
-    }
-
-    if (localStorage.getItem("isPlaying") === "true") {
-        music.play();
-    } else {
-        music.pause();
-        playPauseBtn.textContent = "🔊 Play";
+    // Restore playback position
+    const savedTime = parseFloat(localStorage.getItem("musicTime"));
+    if (!isNaN(savedTime)) {
+        music.currentTime = savedTime;
     }
 });
 
-// ✅ Function to play a song (now with a `keepProgress` flag)
-function playSong(index, keepProgress = true) {
-    if (index >= songs.length) index = 0;
-    
-    currentSongIndex = index;
-    let previousTime = keepProgress ? music.currentTime : 0; // Restore time if needed
-
-    music.src = songs[currentSongIndex].src;
-    songNameDisplay.textContent = "Now Playing: " + songs[currentSongIndex].name;
-
-    music.load();
-    
-    music.onloadeddata = () => {
-        music.currentTime = previousTime; // Restore previous time
-        music.play();
-    };
-
-    playPauseBtn.textContent = "⏸ Pause";
-    localStorage.setItem("songIndex", currentSongIndex);
-}
-
-// ✅ Save music progress every second
+// Save progress periodically
 setInterval(() => {
     localStorage.setItem("musicTime", music.currentTime);
-    localStorage.setItem("isPlaying", !music.paused);
 }, 1000);
 
-// ✅ Play/Pause Button
+// Play/Pause button
 playPauseBtn.addEventListener("click", () => {
     if (music.paused) {
-        music.play();
-        playPauseBtn.textContent = "⏸ Pause";
-        localStorage.setItem("isPlaying", "true");
+        music.play().then(() => {
+            playPauseBtn.textContent = "⏸ Pause";
+            localStorage.setItem("isPlaying", "true");
+        }).catch(e => console.error("Play failed:", e));
     } else {
         music.pause();
-        playPauseBtn.textContent = "🔊 Play";
+        playPauseBtn.textContent = "▶ Play";
         localStorage.setItem("isPlaying", "false");
     }
 });
 
-// ✅ Mute/Unmute Button
+// Mute/Unmute button
 muteBtn.addEventListener("click", () => {
     music.muted = !music.muted;
     muteBtn.textContent = music.muted ? "🔊 Unmute" : "🔇 Mute";
     localStorage.setItem("isMuted", music.muted);
 });
 
-// ✅ Volume Control
+// Volume control
 volumeSlider.addEventListener("input", () => {
     music.volume = volumeSlider.value;
     localStorage.setItem("musicVolume", music.volume);
 });
 
+// Add event listeners for next/previous buttons if you have them
+document.getElementById("next-btn")?.addEventListener("click", () => {
+    playSong(currentSongIndex + 1);
+});
+
+document.getElementById("prev-btn")?.addEventListener("click", () => {
+    playSong(currentSongIndex - 1);
+});
+
+// Handle when song ends
+music.addEventListener("ended", () => {
+    playSong(currentSongIndex + 1); // Play next song
+});
 
 
