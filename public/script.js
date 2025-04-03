@@ -191,26 +191,7 @@ const songs = [
 
 let currentSongIndex = parseInt(localStorage.getItem("songIndex")) || 0;
 
-// Function to play a song
-function playSong(index) {
-    if (index >= songs.length) index = 0;
-
-    console.log("Playing:", songs[index].name); // Debugging
-
-    currentSongIndex = index;
-    music.src = songs[currentSongIndex].src;
-    songNameDisplay.textContent = "Now Playing: " + songs[currentSongIndex].name;
-    
-    // Load only if changing songs to prevent unnecessary reloads
-    if (!music.paused) music.load();
-    
-    music.play();
-    playPauseBtn.textContent = "⏸ Pause";
-    localStorage.setItem("songIndex", currentSongIndex);
-}
-
-// ✅ Restore song progress & play state on page load
-// ✅ Restore mute state on page load
+// ✅ Restore song progress & play state
 document.addEventListener("DOMContentLoaded", () => {
     music.volume = parseFloat(localStorage.getItem("musicVolume")) || 0.5;
     volumeSlider.value = music.volume;
@@ -220,7 +201,8 @@ document.addEventListener("DOMContentLoaded", () => {
         muteBtn.textContent = "🔊 Unmute";
     }
 
-    playSong(currentSongIndex);
+    // Restore the song and progress
+    playSong(currentSongIndex, false);
 
     if (localStorage.getItem("musicTime")) {
         music.currentTime = parseFloat(localStorage.getItem("musicTime"));
@@ -234,28 +216,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// ✅ Ensure song reloads correctly
-function playSong(index) {
+// ✅ Function to play a song (now with a `keepProgress` flag)
+function playSong(index, keepProgress = true) {
     if (index >= songs.length) index = 0;
-
-    console.log("Playing:", songs[index].name);
+    
     currentSongIndex = index;
+    let previousTime = keepProgress ? music.currentTime : 0; // Restore time if needed
+
     music.src = songs[currentSongIndex].src;
     songNameDisplay.textContent = "Now Playing: " + songs[currentSongIndex].name;
 
-    music.load(); // 🔥 Always reload the song
+    music.load();
+    
+    music.onloadeddata = () => {
+        music.currentTime = previousTime; // Restore previous time
+        music.play();
+    };
 
-    music.play();
     playPauseBtn.textContent = "⏸ Pause";
     localStorage.setItem("songIndex", currentSongIndex);
 }
 
-// ✅ Fix: Only save music progress every second, not play state
+// ✅ Save music progress every second
 setInterval(() => {
     localStorage.setItem("musicTime", music.currentTime);
+    localStorage.setItem("isPlaying", !music.paused);
 }, 1000);
 
-// ✅ Fix: Save play state inside event listeners
+// ✅ Play/Pause Button
 playPauseBtn.addEventListener("click", () => {
     if (music.paused) {
         music.play();
@@ -268,24 +256,18 @@ playPauseBtn.addEventListener("click", () => {
     }
 });
 
-
-// Mute/Unmute button functionality
+// ✅ Mute/Unmute Button
 muteBtn.addEventListener("click", () => {
     music.muted = !music.muted;
     muteBtn.textContent = music.muted ? "🔊 Unmute" : "🔇 Mute";
     localStorage.setItem("isMuted", music.muted);
 });
 
-// Volume control
+// ✅ Volume Control
 volumeSlider.addEventListener("input", () => {
     music.volume = volumeSlider.value;
     localStorage.setItem("musicVolume", music.volume);
 });
 
-// ✅ Save music progress & play state every second
-setInterval(() => {
-    localStorage.setItem("musicTime", music.currentTime);
-    localStorage.setItem("isPlaying", !music.paused);
-}, 1000);
 
 
