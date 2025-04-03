@@ -194,68 +194,60 @@ let currentSongIndex = parseInt(localStorage.getItem("songIndex")) || 0;
 // Function to play a song
 function playSong(index) {
     if (index >= songs.length) index = 0;
-    if (index < 0) index = songs.length - 1;
 
-    console.log("Playing:", songs[index].name);
+    console.log("Playing:", songs[index].name); // Debugging
+
     currentSongIndex = index;
     music.src = songs[currentSongIndex].src;
     songNameDisplay.textContent = "Now Playing: " + songs[currentSongIndex].name;
     
-    // Load the new song and play when ready
-    music.load();
-    music.oncanplay = () => {
-        if (localStorage.getItem("isPlaying") === "true") {
-            music.play().catch(e => console.error("Play failed:", e));
-            playPauseBtn.textContent = "⏸ Pause";
-        }
-    };
+    // Load only if changing songs to prevent unnecessary reloads
+    if (!music.paused) music.load();
     
+    music.play();
+    playPauseBtn.textContent = "⏸ Pause";
     localStorage.setItem("songIndex", currentSongIndex);
 }
 
-// Restore state on page load
+// ✅ Restore song progress & play state on page load
 document.addEventListener("DOMContentLoaded", () => {
-    // Volume
-    const savedVolume = parseFloat(localStorage.getItem("musicVolume"));
-    music.volume = isNaN(savedVolume) ? 0.5 : Math.min(1, Math.max(0, savedVolume));
+    music.volume = localStorage.getItem("musicVolume") || 0.5;
     volumeSlider.value = music.volume;
 
-    // Mute state
-    if (localStorage.getItem("isMuted") === "true") {
-        music.muted = true;
-        muteBtn.textContent = "🔊 Unmute";
-    }
-
-    // Play the current song
+    // Load saved song
     playSong(currentSongIndex);
 
-    // Restore playback position
-    const savedTime = parseFloat(localStorage.getItem("musicTime"));
-    if (!isNaN(savedTime)) {
-        music.currentTime = savedTime;
+    if (localStorage.getItem("musicTime")) {
+        music.currentTime = parseFloat(localStorage.getItem("musicTime"));
+    }
+    if (localStorage.getItem("isPlaying") === "true") {
+        music.play();
+    } else {
+        music.pause();
+        playPauseBtn.textContent = "🔊 Play";
     }
 });
 
-// Save progress periodically
-setInterval(() => {
-    localStorage.setItem("musicTime", music.currentTime);
-}, 1000);
+// ✅ Auto-play next song when the current one ends
+music.addEventListener("ended", () => {
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    playSong(currentSongIndex);
+});
 
-// Play/Pause button
+// Play/Pause button functionality
 playPauseBtn.addEventListener("click", () => {
     if (music.paused) {
-        music.play().then(() => {
-            playPauseBtn.textContent = "⏸ Pause";
-            localStorage.setItem("isPlaying", "true");
-        }).catch(e => console.error("Play failed:", e));
+        music.play();
+        playPauseBtn.textContent = "⏸ Pause";
+        localStorage.setItem("isPlaying", "true");
     } else {
         music.pause();
-        playPauseBtn.textContent = "▶ Play";
+        playPauseBtn.textContent = "🔊 Play";
         localStorage.setItem("isPlaying", "false");
     }
 });
 
-// Mute/Unmute button
+// Mute/Unmute button functionality
 muteBtn.addEventListener("click", () => {
     music.muted = !music.muted;
     muteBtn.textContent = music.muted ? "🔊 Unmute" : "🔇 Mute";
@@ -268,18 +260,10 @@ volumeSlider.addEventListener("input", () => {
     localStorage.setItem("musicVolume", music.volume);
 });
 
-// Add event listeners for next/previous buttons if you have them
-document.getElementById("next-btn")?.addEventListener("click", () => {
-    playSong(currentSongIndex + 1);
-});
-
-document.getElementById("prev-btn")?.addEventListener("click", () => {
-    playSong(currentSongIndex - 1);
-});
-
-// Handle when song ends
-music.addEventListener("ended", () => {
-    playSong(currentSongIndex + 1); // Play next song
-});
+// ✅ Save music progress & play state every second
+setInterval(() => {
+    localStorage.setItem("musicTime", music.currentTime);
+    localStorage.setItem("isPlaying", !music.paused);
+}, 1000);
 
 
