@@ -210,16 +210,22 @@ function playSong(index) {
 }
 
 // ✅ Restore song progress & play state on page load
+// ✅ Restore mute state on page load
 document.addEventListener("DOMContentLoaded", () => {
-    music.volume = localStorage.getItem("musicVolume") || 0.5;
+    music.volume = parseFloat(localStorage.getItem("musicVolume")) || 0.5;
     volumeSlider.value = music.volume;
 
-    // Load saved song
+    if (localStorage.getItem("isMuted") === "true") {
+        music.muted = true;
+        muteBtn.textContent = "🔊 Unmute";
+    }
+
     playSong(currentSongIndex);
 
     if (localStorage.getItem("musicTime")) {
         music.currentTime = parseFloat(localStorage.getItem("musicTime"));
     }
+
     if (localStorage.getItem("isPlaying") === "true") {
         music.play();
     } else {
@@ -228,13 +234,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// ✅ Auto-play next song when the current one ends
-music.addEventListener("ended", () => {
-    currentSongIndex = (currentSongIndex + 1) % songs.length;
-    playSong(currentSongIndex);
-});
+// ✅ Ensure song reloads correctly
+function playSong(index) {
+    if (index >= songs.length) index = 0;
 
-// Play/Pause button functionality
+    console.log("Playing:", songs[index].name);
+    currentSongIndex = index;
+    music.src = songs[currentSongIndex].src;
+    songNameDisplay.textContent = "Now Playing: " + songs[currentSongIndex].name;
+
+    music.load(); // 🔥 Always reload the song
+
+    music.play();
+    playPauseBtn.textContent = "⏸ Pause";
+    localStorage.setItem("songIndex", currentSongIndex);
+}
+
+// ✅ Fix: Only save music progress every second, not play state
+setInterval(() => {
+    localStorage.setItem("musicTime", music.currentTime);
+}, 1000);
+
+// ✅ Fix: Save play state inside event listeners
 playPauseBtn.addEventListener("click", () => {
     if (music.paused) {
         music.play();
@@ -246,6 +267,7 @@ playPauseBtn.addEventListener("click", () => {
         localStorage.setItem("isPlaying", "false");
     }
 });
+
 
 // Mute/Unmute button functionality
 muteBtn.addEventListener("click", () => {
