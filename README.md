@@ -20,4 +20,4 @@ A comprehensive web-based platform that provides detailed information about Indi
 - **Backend:** Node.js, Express.js  
 - **Database:** MongoDB  
 - **Hosting:** Render  
- 8b0f599 (Initial commit)
+ 
